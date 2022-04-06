@@ -14,6 +14,7 @@ class VideoAdapter internal constructor(private val estrenosList: List<Estrenos>
         val view =
             LayoutInflater.from(parent.context).inflate(R.layout.estrenos_item, parent, false)
         return VideoViewHolder(view)
+        
     }
 
     override fun onBindViewHolder(holder: VideoViewHolder, position: Int) {
