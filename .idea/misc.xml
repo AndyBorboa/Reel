@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Aplicaciones Moviles/Reel_ProyectoMoviles/app/src/main/res/drawable/backgroundtab.xml" value="0.1705" />
+        <entry key="..\:/Aplicaciones Moviles/Reel_ProyectoMoviles/app/src/main/res/drawable/borde.xml" value="0.18" />
+        <entry key="..\:/Aplicaciones Moviles/Reel_ProyectoMoviles/app/src/main/res/drawable/bordedos.xml" value="0.1705" />
+        <entry key="..\:/Aplicaciones Moviles/Reel_ProyectoMoviles/app/src/main/res/drawable/bordetres.xml" value="0.1705" />
+        <entry key="..\:/Aplicaciones Moviles/Reel_ProyectoMoviles/app/src/main/res/drawable/ic_anyconv_com__usuario_36x36.xml" value="0.18" />
+        <entry key="..\:/Aplicaciones Moviles/Reel_ProyectoMoviles/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2" />
+        <entry key="..\:/Aplicaciones Moviles/Reel_ProyectoMoviles/app/src/main/res/drawable/ic_usuario_36x36.xml" value="0.1505" />
+        <entry key="..\:/Aplicaciones Moviles/Reel_ProyectoMoviles/app/src/main/res/drawable/indicatorcolor.xml" value="0.1705" />
+        <entry key="..\:/Aplicaciones Moviles/Reel_ProyectoMoviles/app/src/main/res/drawable/lineas.xml" value="0.159" />
+        <entry key="..\:/Aplicaciones Moviles/Reel_ProyectoMoviles/app/src/main/res/drawable/round_button.xml" value="0.133" />
+        <entry key="..\:/Aplicaciones Moviles/Reel_ProyectoMoviles/app/src/main/res/drawable/round_button_dos.xml" value="0.1" />
+        <entry key="..\:/Aplicaciones Moviles/Reel_ProyectoMoviles/app/src/main/res/drawable/round_buttontres.xml" value="0.1705" />
+        <entry key="..\:/Aplicaciones Moviles/Reel_ProyectoMoviles/app/src/main/res/drawable/toggle_apagado.xml" value="0.159" />
+        <entry key="..\:/Aplicaciones Moviles/Reel_ProyectoMoviles/app/src/main/res/drawable/toggle_campana.xml" value="0.1625" />
+        <entry key="..\:/Aplicaciones Moviles/Reel_ProyectoMoviles/app/src/main/res/drawable/toggle_cartelera.xml" value="0.159" />
+        <entry key="..\:/Aplicaciones Moviles/Reel_ProyectoMoviles/app/src/main/res/drawable/toggle_cines.xml" value="0.159" />
+        <entry key="..\:/Aplicaciones Moviles/Reel_ProyectoMoviles/app/src/main/res/drawable/toggle_corazon.xml" value="0.1705" />
+        <entry key="..\:/Aplicaciones Moviles/Reel_ProyectoMoviles/app/src/main/res/drawable/toggle_downvote.xml" value="0.1705" />
+        <entry key="..\:/Aplicaciones Moviles/Reel_ProyectoMoviles/app/src/main/res/drawable/toggle_editar.xml" value="0.1705" />
+        <entry key="..\:/Aplicaciones Moviles/Reel_ProyectoMoviles/app/src/main/res/drawable/toggle_guardar.xml" value="0.1625" />
+        <entry key="..\:/Aplicaciones Moviles/Reel_ProyectoMoviles/app/src/main/res/drawable/toggle_inicio.xml" value="0.159" />
+        <entry key="..\:/Aplicaciones Moviles/Reel_ProyectoMoviles/app/src/main/res/drawable/toggle_interruptor.xml" value="0.159" />
+        <entry key="..\:/Aplicaciones Moviles/Reel_ProyectoMoviles/app/src/main/res/drawable/toggle_perfil.xml" value="0.159" />
+        <entry key="..\:/Aplicaciones Moviles/Reel_ProyectoMoviles/app/src/main/res/drawable/toggle_porver.xml" value="0.1705" />
+        <entry key="..\:/Aplicaciones Moviles/Reel_ProyectoMoviles/app/src/main/res/drawable/toggle_vista.xml" value="0.1705" />
+        <entry key="..\:/Aplicaciones Moviles/Reel_ProyectoMoviles/app/src/main/res/drawable/toggle_vote.xml" value="0.1705" />
+        <entry key="..\:/Aplicaciones Moviles/Reel_ProyectoMoviles/app/src/main/res/drawable/troggle_estrenos.xml" value="0.159" />
+        <entry key="..\:/Aplicaciones Moviles/Reel_ProyectoMoviles/app/src/main/res/font/font.xml" value="0.21822916666666667" />
+        <entry key="..\:/Aplicaciones Moviles/Reel_ProyectoMoviles/app/src/main/res/layout/activity_cartelera.xml" value="0.2" />
+        <entry key="..\:/Aplicaciones Moviles/Reel_ProyectoMoviles/app/src/main/res/layout/activity_cines.xml" value="0.33" />
+        <entry key="..\:/Aplicaciones Moviles/Reel_ProyectoMoviles/app/src/main/res/layout/activity_comentario.xml" value="0.25" />
+        <entry key="..\:/Aplicaciones Moviles/Reel_ProyectoMoviles/app/src/main/res/layout/activity_estrenos.xml" value="0.2" />
+        <entry key="..\:/Aplicaciones Moviles/Reel_ProyectoMoviles/app/src/main/res/layout/activity_iniciar_sesion.xml" value="0.25" />
+        <entry key="..\:/Aplicaciones Moviles/Reel_ProyectoMoviles/app/src/main/res/layout/activity_inicio.xml" value="0.2" />
+        <entry key="..\:/Aplicaciones Moviles/Reel_ProyectoMoviles/app/src/main/res/layout/activity_main.xml" value="0.21" />
+        <entry key="..\:/Aplicaciones Moviles/Reel_ProyectoMoviles/app/src/main/res/layout/activity_password_recovery.xml" value="0.25" />
+        <entry key="..\:/Aplicaciones Moviles/Reel_ProyectoMoviles/app/src/main/res/layout/activity_peliculas.xml" value="0.2" />
+        <entry key="..\:/Aplicaciones Moviles/Reel_ProyectoMoviles/app/src/main/res/layout/activity_perfil.xml" value="0.25" />
+        <entry key="..\:/Aplicaciones Moviles/Reel_ProyectoMoviles/app/src/main/res/layout/activity_prueba.xml" value="0.16802536231884058" />
+        <entry key="..\:/Aplicaciones Moviles/Reel_ProyectoMoviles/app/src/main/res/layout/activity_recovery_user.xml" value="0.20364583333333333" />
+        <entry key="..\:/Aplicaciones Moviles/Reel_ProyectoMoviles/app/src/main/res/layout/activity_registrarse.xml" value="0.25" />
+        <entry key="..\:/Aplicaciones Moviles/Reel_ProyectoMoviles/app/src/main/res/layout/activity_ubicacion.xml" value="0.33" />
+        <entry key="..\:/Aplicaciones Moviles/Reel_ProyectoMoviles/app/src/main/res/layout/carousel_item.xml" value="0.25" />
+        <entry key="..\:/Aplicaciones Moviles/Reel_ProyectoMoviles/app/src/main/res/layout/cartelera_item.xml" value="0.25" />
+        <entry key="..\:/Aplicaciones Moviles/Reel_ProyectoMoviles/app/src/main/res/layout/cell_horarios.xml" value="0.33" />
+        <entry key="..\:/Aplicaciones Moviles/Reel_ProyectoMoviles/app/src/main/res/layout/estrenos_item.xml" value="0.33" />
+        <entry key="..\:/Aplicaciones Moviles/Reel_ProyectoMoviles/app/src/main/res/layout/fragment_calificaciones.xml" value="0.25" />
+        <entry key="..\:/Aplicaciones Moviles/Reel_ProyectoMoviles/app/src/main/res/layout/fragment_datos.xml" value="0.25" />
+        <entry key="..\:/Aplicaciones Moviles/Reel_ProyectoMoviles/app/src/main/res/layout/fragment_home.xml" value="0.20364583333333333" />
+        <entry key="..\:/Aplicaciones Moviles/Reel_ProyectoMoviles/app/src/main/res/layout/fragment_horarios.xml" value="0.20364583333333333" />
+        <entry key="..\:/Aplicaciones Moviles/Reel_ProyectoMoviles/app/src/main/res/layout/fragment_peliculas.xml" value="0.2" />
+        <entry key="..\:/Aplicaciones Moviles/Reel_ProyectoMoviles/app/src/main/res/layout/item_cines.xml" value="0.25" />
+        <entry key="..\:/Aplicaciones Moviles/Reel_ProyectoMoviles/app/src/main/res/layout/item_comentario.xml" value="0.25" />
+        <entry key="..\:/Aplicaciones Moviles/Reel_ProyectoMoviles/app/src/main/res/layout/item_horarios.xml" value="0.25" />
+        <entry key="..\:/Aplicaciones Moviles/Reel_ProyectoMoviles/app/src/main/res/layout/perfil_item.xml" value="0.22" />
+        <entry key="..\:/Aplicaciones Moviles/Reel_ProyectoMoviles/app/src/main/res/layout/promos_item.xml" value="0.2" />
+        <entry key="..\:/Aplicaciones Moviles/Reel_ProyectoMoviles/app/src/main/res/layout/slider_item.xml" value="0.11302083333333333" />
+        <entry key="..\:/Aplicaciones Moviles/Reel_ProyectoMoviles/app/src/main/res/layout/ubicacion_item.xml" value="0.22" />
+        <entry key="..\:/Aplicaciones Moviles/Reel_ProyectoMoviles/app/src/main/res/layout/xd.xml" value="0.11302083333333333" />
+        <entry key="..\:/Aplicaciones Moviles/Reel_ProyectoMoviles/app/src/main/res/menu/bottom_nav_menu.xml" value="0.18802083333333333" />
+        <entry key="..\:/Aplicaciones Moviles/Reel_ProyectoMoviles/app/src/main/res/menu/menu_navigatio.xml" value="0.20364583333333333" />
+        <entry key="..\:/Aplicaciones Moviles/Reel_ProyectoMoviles/app/src/main/res/menu/options_menu.xml" value="0.19947916666666668" />
+        <entry key="..\:/Aplicaciones Moviles/Reel_ProyectoMoviles/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.136" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

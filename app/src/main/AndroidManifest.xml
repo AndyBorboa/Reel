@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="borboa.andrea.reel_proyectomoviles">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Reel_ProyectoMoviles">
+        <activity
+            android:name=".prueba"
+            android:exported="false"
+            android:label="@string/title_activity_prueba" />
+        <activity
+            android:name=".ActivityComentario"
+            android:exported="false" />
+        <activity
+            android:name=".PeliculasActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CarteleraActivity"
+            android:exported="false" />
+        <activity
+            android:name=".EstrenosActivity"
+            android:exported="false" />
+        <activity
+            android:name=".RecoveryUserActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PasswordRecoveryActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PerfilActivity"
+            android:exported="false" />
+        <activity
+            android:name=".UbicacionActivity"
+            android:exported="false" />
+        <activity
+            android:name=".cines"
+            android:exported="false" />
+        <activity
+            android:name=".registrarse"
+            android:exported="false" />
+        <activity
+            android:name=".iniciar_sesion"
+            android:exported="false" />
+        <activity
+            android:name=".InicioActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

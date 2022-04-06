@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UbicacionActivity"
+    android:orientation="vertical"
+    android:background="@color/color_background">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/ic_ubicacion" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/littera_regular"
+            android:text="Ubicación"
+            android:textColor="@color/white"
+            android:textSize="35dp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="554dp"
+        android:background="@color/grisblack"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="77dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="30dp"
+                android:fontFamily="@font/littera_regular"
+                android:text="Permitir detección de ubicación"
+                android:textColor="@color/white"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
+            <ToggleButton
+                android:id="@+id/btn_ubicacion"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/toggle_interruptor"
+                android:textOff=""
+                android:textOn="" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:fontFamily="@font/littera_regular"
+                android:text="Ciudad destacada"
+                android:textColor="@color/white"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
+            <Spinner
+                android:id="@+id/spinner"
+                android:layout_width="160dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="5dp"
+                android:outlineAmbientShadowColor="@color/gris"
+                android:outlineSpotShadowColor="@color/gris" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@color/color_background">
+
+        <ToggleButton
+            android:id="@+id/btn_inicio"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="5dp"
+            android:textOn=""
+            android:textOff=""
+            android:background="@drawable/toggle_inicio" />
+
+        <ToggleButton
+            android:id="@+id/btn_cartelera"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="40dp"
+            android:textOn=""
+            android:textOff=""
+            android:background="@drawable/toggle_cartelera" />
+        <ToggleButton
+            android:id="@+id/btn_estrenos"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="40dp"
+            android:textOn=""
+            android:textOff=""
+            android:background="@drawable/troggle_estrenos" />
+
+        <ToggleButton
+            android:id="@+id/btn_cines"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="40dp"
+            android:textOn=""
+            android:textOff=""
+            android:background="@drawable/toggle_cines"/>
+
+        <ToggleButton
+            android:id="@+id/btn_perfil"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="40dp"
+            android:textOff=""
+            android:textOn=""
+            android:background="@drawable/toggle_perfil" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Inicio"
+            android:layout_marginLeft="24dp"
+            android:textColor="@color/white"
+            android:textSize="15dp"
+            android:fontFamily="@font/littera_regular"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cartelera"
+            android:layout_marginLeft="15dp"
+            android:textColor="@color/white"
+            android:textSize="15dp"
+            android:fontFamily="@font/littera_regular"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Estrenos"
+            android:layout_marginLeft="15dp"
+            android:textColor="@color/white"
+            android:textSize="15dp"
+            android:fontFamily="@font/littera_regular"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cines"
+            android:layout_marginLeft="20dp"
+            android:textColor="@color/white"
+            android:textSize="15dp"
+            android:fontFamily="@font/littera_regular"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Perfil"
+            android:layout_marginLeft="34dp"
+            android:textColor="@color/white"
+            android:textSize="15dp"
+            android:fontFamily="@font/littera_regular"/>
+
+
+    </LinearLayout>
+
+</LinearLayout>

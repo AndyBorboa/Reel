@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ActivityComentario"
+    android:background="@color/grisblack">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Película"
+            android:textColor="@color/white"
+            android:textSize="30dp"
+            android:textStyle="bold"
+            android:background="@color/color_background"
+            android:padding="20dp"
+            android:textAlignment="textStart"
+            android:fontFamily="@font/littera_regular"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="¿Que calificación le das?"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:textSize="18dp"
+                android:fontFamily="@font/littera_regular"
+                android:gravity="center"
+                android:layout_marginTop="30dp"/>
+
+            <RatingBar
+                android:layout_marginTop="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:rating="0" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="¡Mala!"
+                android:layout_marginTop="15dp"
+                android:textColor="@color/white"
+                android:fontFamily="@font/littera_regular"
+                android:textSize="35dp"
+                android:gravity="center"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="122dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/round_buttontres"
+                android:fontFamily="@font/littera_regular"
+                android:hint="Escribir comentario..."
+                android:paddingLeft="20dp"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:textSize="10dp" />
+
+
+
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="7px"
+            android:background="@color/gris"
+            android:layout_marginTop="10dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="5dp"
+            android:layout_gravity="center">
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:textAllCaps="false"
+                android:text="Continue Spoilers"
+                android:textStyle="bold"
+                android:textSize="8dp"
+                android:fontFamily="@font/littera_regular"
+                app:cornerRadius="25dp"
+                app:strokeColor="@color/white"
+                app:strokeWidth="1dp"
+                android:backgroundTint="@color/grisblack"
+                android:textColor="@color/white"
+                android:gravity="center"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:textAllCaps="false"
+                android:text="Cancelar"
+                android:textStyle="bold"
+                android:textSize="8dp"
+                android:fontFamily="@font/littera_regular"
+                app:cornerRadius="25dp"
+                android:layout_gravity="center"
+                android:backgroundTint="@color/gris"
+                android:textColor="@color/white"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:textAllCaps="false"
+                android:text="Calificar"
+                android:textStyle="bold"
+                android:textSize="8dp"
+                android:fontFamily="@font/littera_regular"
+                app:cornerRadius="25dp"
+                android:backgroundTint="@color/white"
+                android:textColor="@color/black"
+                android:layout_gravity="center"/>
+
+
+
+
+        </LinearLayout>
+
+        </LinearLayout>
+
+
+
+</LinearLayout>

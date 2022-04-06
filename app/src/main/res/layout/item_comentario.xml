@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gris"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/bordedos">
+        <LinearLayout
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                android:src="@drawable/peon"
+                android:padding="10dp"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Rick Sanchez"
+                    android:textColor="@color/white"
+                    android:textSize="16dp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="5dp"/>
+
+                <RatingBar
+                    android:id="@+id/ratingBar_cines"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="2dp"
+                    android:rating="3.5"
+                    style="?android:attr/ratingBarStyleSmall"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/white"
+                    android:text="23/marzo/2021"
+                    android:fontFamily="@font/littera_regular"/>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="6dp">
+
+                    <ToggleButton
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:textOff=""
+                        android:textOn=""
+                        android:layout_marginTop="2dp"
+                        android:background="@drawable/toggle_vote"
+                        android:layout_marginLeft="99dp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="31"
+                        android:textColor="@color/white"
+                        android:textSize="15dp"
+                        android:textAlignment="textEnd"
+                        android:layout_marginLeft="5dp"/>
+                    <ToggleButton
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:textOff=""
+                        android:textOn=""
+                        android:layout_marginTop="2dp"
+                        android:background="@drawable/toggle_downvote"
+                        android:layout_marginLeft="5dp"/>
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="A mi me a gustado mucho, partiendo de la base que ya sabía lo que iba a ver, la verdad es que a sido muy entretenida y con el cambio de guion que hay en la película se vuelve muy interesante."
+                android:textColor="@color/white"
+                android:textSize="15dp"
+                android:fontFamily="@font/littera_regular"
+                android:layout_gravity="right"
+                android:padding="15dp"/>
+        </LinearLayout>
+    </LinearLayout>
+
+
+
+
+
+</LinearLayout>
