@@ -141,7 +141,7 @@ class EstrenosActivity : AppCompatActivity() {
         ))
 
         val videoAdapter = VideoAdapter(listaEstrenos)
-        recyclerView.adapter = videoAdapter
+        recyclerView.adapter = videoAdapter 
 
     }
 
