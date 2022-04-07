@@ -6,13 +6,15 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/color_background"
-    tools:context=".iniciar_sesion">
+    tools:context=".iniciar_sesion"
+    >
 
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="88dp"
         app:srcCompat="@drawable/logotipo"
-        android:layout_marginTop="15dp"/>
+        android:layout_marginTop="15dp"
+        />
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -27,7 +29,8 @@
             android:textStyle="bold"
             android:textSize="35dp"
             android:textAlignment="center"
-            android:textColor="@color/white" />
+            android:textColor="@color/white"
+            />
 
     </LinearLayout>
 
@@ -60,7 +63,8 @@
                 android:layout_marginLeft="100dp"
                 android:layout_marginTop="20dp"
                 android:layout_weight="1"
-                android:background="@drawable/ic_usuario" />
+                android:background="@drawable/ic_usuario"
+                />
         </LinearLayout>
 
 
