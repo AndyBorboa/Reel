@@ -28,11 +28,504 @@
             android:layout_gravity="center"
             android:src="@drawable/cinepolis" />
 
-        <ListView
+        <LinearLayout
             android:id="@+id/lv_horarios"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"/>
+            android:layout_marginTop="10dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/borde">
+
+                <TextView
+                    android:id="@+id/nombreCine"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/color_background"
+                    android:text="Cinépolis Bellavista"
+                    android:textColor="@color/white"
+                    android:textSize="25dp"
+                    android:textAlignment="center"
+                    android:padding="10dp" />
+
+                <LinearLayout
+                    android:padding="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="20dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="ESP"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        android:fontFamily="@font/littera_regular"
+                        android:textSize="20dp"
+                        android:layout_marginLeft="25dp"
+                        android:layout_gravity="center"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:numColumns="5"
+                            android:layout_marginLeft="20dp"
+                            android:layout_gravity="center"
+                            android:layout_marginBottom="5dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="13:35"
+                                android:textColor="@color/white"
+                                android:fontFamily="@font/littera_regular"
+                                android:textSize="15dp"
+                                android:background="@drawable/bordedos"
+                                android:layout_marginRight="5dp"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="15:00"
+                                android:textColor="@color/white"
+                                android:fontFamily="@font/littera_regular"
+                                android:textSize="15dp"
+                                android:background="@drawable/bordedos"
+                                android:layout_marginRight="5dp"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="15:25"
+                                android:textColor="@color/white"
+                                android:fontFamily="@font/littera_regular"
+                                android:textSize="15dp"
+                                android:background="@drawable/bordedos"
+                                android:layout_marginRight="5dp"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="16:00"
+                                android:textColor="@color/white"
+                                android:fontFamily="@font/littera_regular"
+                                android:textSize="15dp"
+                                android:background="@drawable/bordedos"
+                                android:layout_marginRight="5dp"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="17:30"
+                                android:textColor="@color/white"
+                                android:fontFamily="@font/littera_regular"
+                                android:textSize="15dp"
+                                android:background="@drawable/bordedos"
+                                android:layout_marginRight="5dp"/>
+
+                        </TableRow>
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:numColumns="5"
+                            android:layout_marginLeft="20dp"
+                            android:layout_gravity="center">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="18:15"
+                                android:textColor="@color/white"
+                                android:fontFamily="@font/littera_regular"
+                                android:textSize="15dp"
+                                android:background="@drawable/bordedos"
+                                android:layout_marginRight="5dp"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="18:30"
+                                android:textColor="@color/white"
+                                android:fontFamily="@font/littera_regular"
+                                android:textSize="15dp"
+                                android:background="@drawable/bordedos"
+                                android:layout_marginRight="5dp"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="20:00"
+                                android:textColor="@color/white"
+                                android:fontFamily="@font/littera_regular"
+                                android:textSize="15dp"
+                                android:background="@drawable/bordedos"
+                                android:layout_marginRight="5dp"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="20:45"
+                                android:textColor="@color/white"
+                                android:fontFamily="@font/littera_regular"
+                                android:textSize="15dp"
+                                android:background="@drawable/bordedos"
+                                android:layout_marginRight="5dp"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="21:30"
+                                android:textColor="@color/white"
+                                android:fontFamily="@font/littera_regular"
+                                android:textSize="15dp"
+                                android:background="@drawable/bordedos"
+                                android:layout_marginRight="5dp"/>
+
+                        </TableRow>
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:padding="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginEnd="20dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="SUB"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        android:fontFamily="@font/littera_regular"
+                        android:textSize="20dp"
+                        android:layout_marginLeft="25dp"
+                        android:layout_gravity="center"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:numColumns="5"
+                            android:layout_marginLeft="20dp"
+                            android:layout_gravity="center"
+                            android:layout_marginBottom="5dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="14:00"
+                                android:textColor="@color/white"
+                                android:fontFamily="@font/littera_regular"
+                                android:textSize="15dp"
+                                android:background="@drawable/bordedos"
+                                android:layout_marginRight="5dp"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="14:30"
+                                android:textColor="@color/white"
+                                android:fontFamily="@font/littera_regular"
+                                android:textSize="15dp"
+                                android:background="@drawable/bordedos"
+                                android:layout_marginRight="5dp"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="15:40"
+                                android:textColor="@color/white"
+                                android:fontFamily="@font/littera_regular"
+                                android:textSize="15dp"
+                                android:background="@drawable/bordedos"
+                                android:layout_marginRight="5dp"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="16:30"
+                                android:textColor="@color/white"
+                                android:fontFamily="@font/littera_regular"
+                                android:textSize="15dp"
+                                android:background="@drawable/bordedos"
+                                android:layout_marginRight="5dp"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="17:00"
+                                android:textColor="@color/white"
+                                android:fontFamily="@font/littera_regular"
+                                android:textSize="15dp"
+                                android:background="@drawable/bordedos"
+                                android:layout_marginRight="5dp"/>
+
+                        </TableRow>
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:numColumns="5"
+                            android:layout_marginLeft="20dp"
+                            android:layout_gravity="center">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="18:05"
+                                android:textColor="@color/white"
+                                android:fontFamily="@font/littera_regular"
+                                android:textSize="15dp"
+                                android:background="@drawable/bordedos"
+                                android:layout_marginRight="5dp"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="19:00"
+                                android:textColor="@color/white"
+                                android:fontFamily="@font/littera_regular"
+                                android:textSize="15dp"
+                                android:background="@drawable/bordedos"
+                                android:layout_marginRight="5dp"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="19:30"
+                                android:textColor="@color/white"
+                                android:fontFamily="@font/littera_regular"
+                                android:textSize="15dp"
+                                android:background="@drawable/bordedos"
+                                android:layout_marginRight="5dp"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="20:30"
+                                android:textColor="@color/white"
+                                android:fontFamily="@font/littera_regular"
+                                android:textSize="15dp"
+                                android:background="@drawable/bordedos"
+                                android:layout_marginRight="5dp"/>
+
+
+                        </TableRow>
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/borde">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/color_background"
+                    android:text="Cinépolis Sendero Obregon"
+                    android:textColor="@color/white"
+                    android:textSize="25dp"
+                    android:textAlignment="center"
+                    android:padding="10dp" />
+
+                <LinearLayout
+                    android:padding="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="20dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="ESP"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        android:fontFamily="@font/littera_regular"
+                        android:textSize="20dp"
+                        android:layout_marginLeft="25dp"
+                        android:layout_gravity="center"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:numColumns="5"
+                            android:layout_marginLeft="20dp"
+                            android:layout_gravity="center"
+                            android:layout_marginBottom="5dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="15:00"
+                                android:textColor="@color/white"
+                                android:fontFamily="@font/littera_regular"
+                                android:textSize="15dp"
+                                android:background="@drawable/bordedos"
+                                android:layout_marginRight="5dp"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="16:20"
+                                android:textColor="@color/white"
+                                android:fontFamily="@font/littera_regular"
+                                android:textSize="15dp"
+                                android:background="@drawable/bordedos"
+                                android:layout_marginRight="5dp"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="17:00"
+                                android:textColor="@color/white"
+                                android:fontFamily="@font/littera_regular"
+                                android:textSize="15dp"
+                                android:background="@drawable/bordedos"
+                                android:layout_marginRight="5dp"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="17:30"
+                                android:textColor="@color/white"
+                                android:fontFamily="@font/littera_regular"
+                                android:textSize="15dp"
+                                android:background="@drawable/bordedos"
+                                android:layout_marginRight="5dp"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="18:50"
+                                android:textColor="@color/white"
+                                android:fontFamily="@font/littera_regular"
+                                android:textSize="15dp"
+                                android:background="@drawable/bordedos"
+                                android:layout_marginRight="5dp"/>
+
+                        </TableRow>
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:numColumns="5"
+                            android:layout_marginLeft="20dp"
+                            android:layout_gravity="center">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="19:30"
+                                android:textColor="@color/white"
+                                android:fontFamily="@font/littera_regular"
+                                android:textSize="15dp"
+                                android:background="@drawable/bordedos"
+                                android:layout_marginRight="5dp"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="20:00"
+                                android:textColor="@color/white"
+                                android:fontFamily="@font/littera_regular"
+                                android:textSize="15dp"
+                                android:background="@drawable/bordedos"
+                                android:layout_marginRight="5dp"/>
+
+
+
+                        </TableRow>
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:padding="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginEnd="20dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="SUB"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        android:fontFamily="@font/littera_regular"
+                        android:textSize="20dp"
+                        android:layout_marginLeft="25dp"
+                        android:layout_gravity="center"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:numColumns="5"
+                            android:layout_marginLeft="20dp"
+                            android:layout_gravity="center"
+                            android:layout_marginBottom="5dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="15:40"
+                                android:textColor="@color/white"
+                                android:fontFamily="@font/littera_regular"
+                                android:textSize="15dp"
+                                android:background="@drawable/bordedos"
+                                android:layout_marginRight="5dp"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="18:10"
+                                android:textColor="@color/white"
+                                android:fontFamily="@font/littera_regular"
+                                android:textSize="15dp"
+                                android:background="@drawable/bordedos"
+                                android:layout_marginRight="5dp"/>
+
+
+                        </TableRow>
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
 
     </LinearLayout>
 

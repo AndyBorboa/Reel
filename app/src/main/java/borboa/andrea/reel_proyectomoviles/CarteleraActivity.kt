@@ -6,15 +6,11 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.BaseAdapter
-import android.widget.GridView
-import android.widget.ImageView
-import android.widget.TextView
+import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class CarteleraActivity : AppCompatActivity() {
-
 
     val peliculas= ArrayList<peli>()
     var adapter: ItemAdapter? = null
@@ -78,6 +74,13 @@ class CarteleraActivity : AppCompatActivity() {
         var gridView_movies:GridView = findViewById(R.id.gridview) as GridView
 
         gridView_movies.adapter=peliculasAdapter
+
+        var botonFiltro:Button=findViewById(R.id.btn_filtros) as Button
+
+        botonFiltro.setOnClickListener {
+            var intent:Intent=Intent(this,FiltroActivity::class.java)
+            startActivity(intent)
+        }
 
 
     }
