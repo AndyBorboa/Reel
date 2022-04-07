@@ -1,0 +1,354 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@color/color_background"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingLeft="10dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginLeft="30dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Filtros de"
+                android:textColor="@color/white"
+                android:fontFamily="@font/littera_regular"
+                android:textSize="50dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Búsqueda"
+                android:textColor="@color/white"
+                android:fontFamily="@font/littera_regular"
+                android:textSize="50dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ségun tu ubicación"
+                android:textSize="20dp"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/gris"
+                android:fontFamily="@font/littera_regular"/>
+        </LinearLayout>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+
+            <Button
+                android:id="@+id/filtro"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:background="@drawable/ic_filtros"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.757"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.731" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/borde"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:text="Cine"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:fontFamily="@font/littera_regular"
+            android:textSize="22dp"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="10dp"
+            >
+
+            <Button
+                android:layout_width="150dp"
+                android:layout_height="40dp"
+                android:fontFamily="@font/littera_regular"
+                android:text="Cinépolis"
+                android:textAllCaps="false"
+                android:textColor="@color/black_buttons"
+                android:textSize="15dp"
+                android:backgroundTint="@color/white"
+                app:cornerRadius="25dp"/>
+
+            <Button
+                style="?attr/materialButtonOutlinedStyle"
+                android:layout_width="150dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="10dp"
+                android:backgroundTint="@color/color_background"
+                android:fontFamily="@font/littera_regular"
+                android:text="Cinemex"
+                android:textColor="@color/white"
+                android:textSize="10dp"
+                android:textStyle="bold"
+                app:cornerRadius="20dp"
+                app:strokeColor="@color/gris" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:text="Sucursal"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:fontFamily="@font/littera_regular"
+            android:textSize="22dp"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="10dp"
+            >
+
+            <Button
+                android:layout_width="180dp"
+                android:layout_height="40dp"
+                android:fontFamily="@font/littera_regular"
+                android:text="Bella Vista"
+                android:textAllCaps="false"
+                android:textColor="@color/black_buttons"
+                android:textSize="15dp"
+                android:backgroundTint="@color/white"
+                app:cornerRadius="25dp"/>
+
+            <Button
+                android:layout_width="180dp"
+                android:layout_height="40dp"
+                android:fontFamily="@font/littera_regular"
+                android:text="Sendero"
+                android:textAllCaps="false"
+                android:textColor="@color/black_buttons"
+                android:textSize="15dp"
+                android:layout_marginLeft="10dp"
+
+                android:backgroundTint="@color/white"
+                app:cornerRadius="25dp"/>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:text="Idioma"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:fontFamily="@font/littera_regular"
+            android:textSize="22dp"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="10dp"
+            >
+
+            <Button
+                android:layout_width="140dp"
+                android:layout_height="40dp"
+                android:fontFamily="@font/littera_regular"
+                android:text="Doblada"
+                android:textAllCaps="false"
+                android:textColor="@color/black_buttons"
+                android:textSize="15dp"
+                android:backgroundTint="@color/white"
+                app:cornerRadius="25dp"/>
+
+            <Button
+                android:layout_width="140dp"
+                android:layout_height="40dp"
+                android:fontFamily="@font/littera_regular"
+                android:text="Subtitulada"
+                android:textAllCaps="false"
+                android:textColor="@color/black"
+                android:textSize="15dp"
+                android:layout_marginLeft="10dp"
+                android:backgroundTint="@color/white"
+                app:cornerRadius="25dp"/>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:text="Tipo de Proyeccion"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:fontFamily="@font/littera_regular"
+            android:textSize="22dp"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="5dp"
+            >
+
+            <Button
+                android:layout_width="90dp"
+                android:layout_height="40dp"
+                android:fontFamily="@font/littera_regular"
+                android:text="2D"
+                android:textAllCaps="false"
+                android:textColor="@color/black_buttons"
+                android:textSize="15dp"
+                android:backgroundTint="@color/white"
+                app:cornerRadius="25dp"/>
+
+            <Button
+                style="?attr/materialButtonOutlinedStyle"
+                android:layout_width="90dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="10dp"
+                android:backgroundTint="@color/color_background"
+                android:fontFamily="@font/littera_regular"
+                android:text="3D"
+                android:textColor="@color/white"
+                android:textSize="15dp"
+                android:textStyle="bold"
+                app:cornerRadius="20dp"
+                app:strokeColor="@color/gris" />
+            <Button
+                android:layout_width="90dp"
+                android:layout_height="40dp"
+                android:fontFamily="@font/littera_regular"
+                android:text="IMAX"
+                android:textAllCaps="false"
+                android:textColor="@color/black_buttons"
+                android:textSize="15dp"
+                android:layout_marginLeft="10dp"
+
+                android:backgroundTint="@color/white"
+                app:cornerRadius="25dp"/>
+            <Button
+                style="?attr/materialButtonOutlinedStyle"
+                android:layout_width="90dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="10dp"
+                android:backgroundTint="@color/color_background"
+                android:fontFamily="@font/littera_regular"
+                android:text="VIP"
+                android:textColor="@color/white"
+                android:textSize="15dp"
+                android:textStyle="bold"
+                app:cornerRadius="20dp"
+                app:strokeColor="@color/gris" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="10dp"
+            android:paddingLeft="50dp"
+            >
+
+            <Button
+                style="?attr/materialButtonOutlinedStyle"
+                android:layout_width="90dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="10dp"
+                android:backgroundTint="@color/color_background"
+                android:fontFamily="@font/littera_regular"
+                android:text="4D"
+                android:textColor="@color/white"
+                android:textSize="15dp"
+                android:textStyle="bold"
+                app:cornerRadius="20dp"
+                app:strokeColor="@color/gris" />
+
+            <Button
+                style="?attr/materialButtonOutlinedStyle"
+                android:layout_width="90dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="10dp"
+                android:backgroundTint="@color/color_background"
+                android:fontFamily="@font/littera_regular"
+                android:text="4DX"
+                android:textColor="@color/white"
+                android:textSize="15dp"
+                android:textStyle="bold"
+                app:cornerRadius="20dp"
+                app:strokeColor="@color/gris" />
+
+            <Button
+                style="?attr/materialButtonOutlinedStyle"
+                android:layout_width="90dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="10dp"
+                android:backgroundTint="@color/color_background"
+                android:fontFamily="@font/littera_regular"
+                android:text="Otras"
+                android:textColor="@color/white"
+                android:textSize="15dp"
+                android:textStyle="bold"
+                app:cornerRadius="20dp"
+                app:strokeColor="@color/gris" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:text="Horario"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:fontFamily="@font/littera_regular"
+            android:textSize="22dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:text="Dia"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:fontFamily="@font/littera_regular"
+            android:textSize="22dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:text="Calificacion Media de los Usuarios"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:fontFamily="@font/littera_regular"
+            android:textSize="22dp"/>
+
+
+    </LinearLayout>
+
+
+</LinearLayout>

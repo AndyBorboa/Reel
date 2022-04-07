@@ -41,12 +41,14 @@
             app:cornerRadius="20dp" />
 
         <Button
+            android:id="@+id/btn_buscar"
             android:layout_width="25dp"
             android:layout_height="25dp"
             android:layout_marginTop="15dp"
             android:layout_marginLeft="30dp"
             android:background="@drawable/ic_busqueda" />
         <Button
+            android:id="@+id/btn_filtros"
             android:layout_width="25dp"
             android:layout_height="25dp"
             android:layout_marginTop="15dp"
