@@ -66,6 +66,12 @@
         <entry key="..\:/Aplicaciones Moviles/Reel_ProyectoMoviles/app/src/main/res/menu/menu_navigatio.xml" value="0.20364583333333333" />
         <entry key="..\:/Aplicaciones Moviles/Reel_ProyectoMoviles/app/src/main/res/menu/options_menu.xml" value="0.19947916666666668" />
         <entry key="..\:/Aplicaciones Moviles/Reel_ProyectoMoviles/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.136" />
+        <entry key="..\:/Users/SuperPawn/OneDrive/Escritorio/Android Proyect/ProyectoReparado/app/src/main/res/layout/activity_comentario.xml" value="0.25" />
+        <entry key="..\:/Users/SuperPawn/OneDrive/Escritorio/Android Proyect/ProyectoReparado/app/src/main/res/layout/cell_horarios.xml" value="0.25" />
+        <entry key="..\:/Users/SuperPawn/OneDrive/Escritorio/Android Proyect/ProyectoReparado/app/src/main/res/layout/fragment_calificaciones.xml" value="0.264" />
+        <entry key="..\:/Users/SuperPawn/OneDrive/Escritorio/Android Proyect/ProyectoReparado/app/src/main/res/layout/fragment_horarios.xml" value="0.264" />
+        <entry key="..\:/Users/SuperPawn/OneDrive/Escritorio/Android Proyect/ProyectoReparado/app/src/main/res/layout/item_comentario.xml" value="0.25" />
+        <entry key="..\:/Users/SuperPawn/OneDrive/Escritorio/Android Proyect/ProyectoReparado/app/src/main/res/layout/item_horarios.xml" value="0.264" />
       </map>
     </option>
   </component>
