@@ -14,8 +14,8 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <ListView
-            android:id="@+id/listComentarios"
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/ComentariosRecyclerView"
             android:layout_width="match_parent"
             android:layout_height="564dp" />
 

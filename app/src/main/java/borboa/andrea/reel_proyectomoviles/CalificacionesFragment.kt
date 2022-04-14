@@ -13,9 +13,12 @@ import android.widget.BaseAdapter
 import android.widget.Button
 import android.widget.ListView
 import android.widget.TextView
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 
 class CalificacionesFragment : Fragment() {
 
+    private lateinit var ComentariosRecyclerview: RecyclerView
     val comentarios = getArguments()?.getSerializable("comentarios") as ArrayList<comentario>
 
 
@@ -30,48 +33,16 @@ class CalificacionesFragment : Fragment() {
             activity?.startActivity(intent)
         }
 
-        var listview: ListView = view.findViewById(R.id.listComentarios) as ListView
-        var adaptador: AdaptadorComentarios = AdaptadorComentarios(requireActivity().applicationContext, comentarios)
-        listview.adapter = adaptador
+
+        //PromosRecyclerView
+        ComentariosRecyclerview = view.findViewById(R.id.ComentariosRecyclerView)
+        ComentariosRecyclerview.setHasFixedSize(true)
+        ComentariosRecyclerview.setLayoutManager(LinearLayoutManager(requireActivity().applicationContext, RecyclerView.VERTICAL, false))
+
+        val comentariosAdapter = ComentariosAdapter(comentarios)
+        ComentariosRecyclerview.setAdapter(comentariosAdapter)
 
         return view
-    }
-
-    private class AdaptadorComentarios: BaseAdapter {
-        var comentarios = ArrayList<comentario>()
-        var contexto: Context?= null
-
-        constructor(contexto: Context, comentarios: ArrayList<comentario>){
-            this.comentarios = comentarios
-            this.contexto = contexto
-        }
-
-        override fun getCount(): Int {
-            return comentarios.size
-        }
-
-        override fun getItem(p0: Int): Any {
-            return comentarios[p0]
-        }
-
-        override fun getItemId(p0: Int): Long {
-            return p0.toLong()
-        }
-
-        override fun getView(p0: Int, p1: View?, p2: ViewGroup?): View {
-            var comentario = comentarios[p0]
-            var inflador = LayoutInflater.from(contexto)
-            var vista= inflador.inflate(R.layout.item_comentario, null)
-
-            var nombreUsuario = vista.findViewById(R.id.nombreusuario) as TextView
-            var fecha = vista.findViewById(R.id.fecha) as TextView
-            var coments = vista.findViewById(R.id.comentariousuario) as TextView
-
-            nombreUsuario.setText(comentario.nombreUsuario)
-            fecha.setText(comentario.fecha)
-            coments.setText(comentario.comentario)
-            return vista
-        }
     }
 
 

@@ -7,6 +7,7 @@ import android.webkit.WebChromeClient
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewpager.widget.ViewPager
 import com.google.android.material.tabs.TabLayout
+import java.io.Serializable
 
 
 class PeliculasActivity : AppCompatActivity() {
@@ -31,7 +32,7 @@ class PeliculasActivity : AppCompatActivity() {
             var sinopsis = bundle.getString("sinopsis")
             var categoria = bundle.getString("categoria")
 
-            var comentarios=bundle.getSerializable("comentarios")
+            val comentario = bundle.getSerializable("comentarios") as ArrayList<comentario>
 
 
 
@@ -49,7 +50,8 @@ class PeliculasActivity : AppCompatActivity() {
             args.putString("categoria",categoria)
 
             val argsComentario = Bundle()
-            argsComentario.putSerializable("comentarios",comentarios)
+            argsComentario.putSerializable("comentarios",comentario)
+
 
             DatosFragment.setArguments(args)
             CalificacionesFragment.setArguments(argsComentario)
