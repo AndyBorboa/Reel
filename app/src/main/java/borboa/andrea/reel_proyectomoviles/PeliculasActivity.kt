@@ -1,6 +1,8 @@
 package borboa.andrea.reel_proyectomoviles
 
 import android.os.Bundle
+import android.os.Parcel
+import android.os.Parcelable
 import android.webkit.WebChromeClient
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewpager.widget.ViewPager
@@ -13,6 +15,8 @@ class PeliculasActivity : AppCompatActivity() {
         setContentView(R.layout.activity_peliculas)
 
         val DatosFragment = DatosFragment()
+        val CalificacionesFragment = CalificacionesFragment()
+
         val bundle = intent.extras
 
         if (bundle != null) {
@@ -26,6 +30,8 @@ class PeliculasActivity : AppCompatActivity() {
             var videoUrl = bundle.getString("videoUrl")
             var sinopsis = bundle.getString("sinopsis")
             var categoria = bundle.getString("categoria")
+
+            var comentarios=bundle.getSerializable("comentarios")
 
 
 
@@ -42,8 +48,11 @@ class PeliculasActivity : AppCompatActivity() {
             args.putString("sinopsis",sinopsis)
             args.putString("categoria",categoria)
 
+            val argsComentario = Bundle()
+            argsComentario.putSerializable("comentarios",comentarios)
 
             DatosFragment.setArguments(args)
+            CalificacionesFragment.setArguments(argsComentario)
 
 
         }
@@ -54,7 +63,7 @@ class PeliculasActivity : AppCompatActivity() {
         val fragmentAdapter = FragmentAdapter(supportFragmentManager)
         fragmentAdapter.addFragment(DatosFragment,"Datos")
         fragmentAdapter.addFragment(HorariosFragment(),"Horarios")
-        fragmentAdapter.addFragment(CalificacionesFragment(),"Calificaciones")
+        fragmentAdapter.addFragment(CalificacionesFragment,"Calificaciones")
 
 
 

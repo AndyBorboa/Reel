@@ -31,6 +31,7 @@
                 android:orientation="vertical">
 
                 <TextView
+                    android:id="@+id/nombreusuario"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Rick Sanchez"
@@ -42,10 +43,11 @@
 
                 <RatingBar
                     android:id="@+id/ratingBar_cines"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
                     android:layout_marginTop="2dp"
+                    android:numStars="5"
                     android:rating="3.5"
                     style="?android:attr/ratingBarStyleSmall"/>
             </LinearLayout>
@@ -56,6 +58,7 @@
                 android:orientation="vertical">
 
                 <TextView
+                    android:id="@+id/fecha"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textAlignment="textEnd"
@@ -111,6 +114,7 @@
             android:orientation="vertical">
 
             <TextView
+                android:id="@+id/comentariousuario"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="A mi me a gustado mucho, partiendo de la base que ya sabía lo que iba a ver, la verdad es que a sido muy entretenida y con el cambio de guion que hay en la película se vuelve muy interesante."

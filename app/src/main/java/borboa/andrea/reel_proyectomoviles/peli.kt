@@ -9,4 +9,5 @@ data class peli (var imagen:Int,
                  var director:String,
                  var reparto:String,
                  var videoUrl: String?,
-                 var sinopsis:String)
+                 var sinopsis:String,
+                 var comentarios:ArrayList<comentario>)
