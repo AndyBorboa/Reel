@@ -1,13 +1,9 @@
 package borboa.andrea.reel_proyectomoviles
 
 import android.os.Bundle
-import android.os.Parcel
-import android.os.Parcelable
-import android.webkit.WebChromeClient
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewpager.widget.ViewPager
 import com.google.android.material.tabs.TabLayout
-import java.io.Serializable
 
 
 class PeliculasActivity : AppCompatActivity() {

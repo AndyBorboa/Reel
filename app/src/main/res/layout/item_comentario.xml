@@ -1,15 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:background="@color/gris2"
-    android:orientation="horizontal">
+    android:orientation="horizontal"
+    android:layout_marginTop="10dp"
+    android:layout_marginLeft="2dp"
+    android:layout_marginRight="2dp">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:background="@drawable/bordedos">
+        android:background="@drawable/borde">
         <LinearLayout
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
@@ -20,10 +23,10 @@
             android:orientation="horizontal">
 
             <ImageView
-                android:layout_width="110dp"
-                android:layout_height="110dp"
-                android:src="@drawable/peon"
-                android:padding="10dp"/>
+                android:layout_width="79dp"
+                android:layout_height="66dp"
+                android:padding="5dp"
+                android:src="@drawable/peon" />
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -36,7 +39,8 @@
                     android:layout_height="wrap_content"
                     android:text="Rick Sanchez"
                     android:textColor="@color/white"
-                    android:textSize="16dp"
+                    android:textSize="10dp"
+                    android:fontFamily="@font/littera_regular"
                     android:textStyle="bold"
                     android:layout_marginTop="10dp"
                     android:layout_marginLeft="5dp"/>
@@ -64,6 +68,7 @@
                     android:textAlignment="textEnd"
                     android:textColor="@color/white"
                     android:text="23/marzo/2021"
+                    android:textSize="10dp"
                     android:fontFamily="@font/littera_regular"/>
 
 
@@ -74,29 +79,33 @@
                     android:layout_marginTop="6dp">
 
                     <ToggleButton
-                        android:layout_width="15dp"
-                        android:layout_height="15dp"
+                        android:layout_width="10dp"
+                        android:layout_height="10dp"
                         android:textOff=""
                         android:textOn=""
                         android:layout_marginTop="2dp"
                         android:background="@drawable/toggle_vote"
-                        android:layout_marginLeft="99dp"/>
+                        android:gravity="end"
+                        android:layout_marginLeft="50dp"/>
                     <TextView
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         android:text="31"
                         android:textColor="@color/white"
-                        android:textSize="15dp"
-                        android:textAlignment="textEnd"
-                        android:layout_marginLeft="5dp"/>
+                        android:textSize="10dp"
+                        android:textStyle="bold"
+                        android:gravity="center"
+                        android:layout_marginLeft="5dp"
+                        android:fontFamily="@font/littera_regular"/>
                     <ToggleButton
-                        android:layout_width="15dp"
-                        android:layout_height="15dp"
+                        android:layout_width="10dp"
+                        android:layout_height="10dp"
                         android:textOff=""
                         android:textOn=""
                         android:layout_marginTop="2dp"
+                        android:layout_marginLeft="5dp"
                         android:background="@drawable/toggle_downvote"
-                        android:layout_marginLeft="5dp"/>
+                        android:gravity="end"/>
 
                 </LinearLayout>
 
@@ -119,15 +128,10 @@
                 android:layout_height="wrap_content"
                 android:text="A mi me a gustado mucho, partiendo de la base que ya sabía lo que iba a ver, la verdad es que a sido muy entretenida y con el cambio de guion que hay en la película se vuelve muy interesante."
                 android:textColor="@color/white"
-                android:textSize="15dp"
+                android:textSize="10dp"
                 android:fontFamily="@font/littera_regular"
                 android:layout_gravity="right"
                 android:padding="15dp"/>
         </LinearLayout>
     </LinearLayout>
-
-
-
-
-
 </LinearLayout>

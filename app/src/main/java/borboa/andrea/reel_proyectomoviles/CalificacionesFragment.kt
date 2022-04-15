@@ -19,11 +19,13 @@ import androidx.recyclerview.widget.RecyclerView
 class CalificacionesFragment : Fragment() {
 
     private lateinit var ComentariosRecyclerview: RecyclerView
-    val comentarios = getArguments()?.getSerializable("comentarios") as ArrayList<comentario>
+
 
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View?{
+
+        val comentarios = getArguments()?.getSerializable("comentarios") as ArrayList<comentario>
 
         val view = inflater.inflate(R.layout.fragment_calificaciones, container, false)
         val btn_comentario = view.findViewById<View>(R.id.btn_comentario) as Button

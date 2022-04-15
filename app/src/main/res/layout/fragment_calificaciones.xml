@@ -17,7 +17,10 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/ComentariosRecyclerView"
             android:layout_width="match_parent"
-            android:layout_height="564dp" />
+            android:layout_height="470dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="15dp" />
 
 
         <LinearLayout
@@ -37,24 +40,27 @@
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="7px"
+                    android:layout_marginTop="10dp"
                     android:background="@color/gris" />
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="horizontal"
-                android:layout_marginTop="10dp">
+                android:orientation="horizontal">
 
 
 
                 <ImageView
+                    android:layout_marginTop="5dp"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:src="@drawable/peon"
-                    android:layout_marginLeft="20dp"/>
+                    android:padding="3dp"
+                    android:layout_marginLeft="20dp" />
 
                 <Button
+                    android:layout_marginTop="5dp"
                     android:id="@+id/btn_comentario"
                     android:layout_width="195dp"
                     android:layout_height="wrap_content"
