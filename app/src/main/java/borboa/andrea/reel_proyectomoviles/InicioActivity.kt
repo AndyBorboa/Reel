@@ -28,6 +28,8 @@ class InicioActivity : AppCompatActivity() {
         setContentView(binding.root)
         auth = Firebase.auth
 
+        //signOut()
+
         val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottom_navigation)
         bottomNavigationView.selectedItemId = R.id.inicio
         bottomNavigationView.setOnNavigationItemSelectedListener(BottomNavigationView.OnNavigationItemSelectedListener { menuItem ->
@@ -98,5 +100,11 @@ class InicioActivity : AppCompatActivity() {
         promosList.add(PromosItem(R.drawable.precio_especial_3))
         val promosAdapter = PromosAdapter(promosList)
         PromosRecyclerview.setAdapter(promosAdapter)
+    }
+
+    private fun signOut(){
+        Firebase.auth.signOut()
+        val intent = Intent(this,iniciar_sesion::class.java)
+        startActivity(intent)
     }
 }

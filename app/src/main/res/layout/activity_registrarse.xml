@@ -80,7 +80,10 @@
             android:layout_marginLeft="80dp"
             android:layout_marginRight="80dp"
             android:layout_weight="1"
-            android:padding="5dp"/>
+            android:padding="5dp"
+            android:textAlignment="center"
+            android:fontFamily="@font/littera_regular"
+            android:textColor="@color/white"/>
     </LinearLayout>
 
 
@@ -123,7 +126,7 @@
         android:layout_height="wrap_content">
 
         <EditText
-            android:id="@+id/et_contraseña"
+            android:id="@+id/et_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPassword"
@@ -132,7 +135,10 @@
             android:layout_marginLeft="80dp"
             android:layout_marginRight="80dp"
             android:layout_weight="1"
-            android:padding="5dp"/>
+            android:padding="5dp"
+            android:textAlignment="center"
+            android:fontFamily="@font/littera_regular"
+            android:textColor="@color/white"/>
     </LinearLayout>
 
     <LinearLayout
@@ -180,7 +186,10 @@
             android:layout_marginLeft="80dp"
             android:layout_marginRight="80dp"
             android:layout_weight="1"
-            android:padding="5dp"/>
+            android:padding="5dp"
+            android:textAlignment="center"
+            android:fontFamily="@font/littera_regular"
+            android:textColor="@color/white"/>
     </LinearLayout>
 
     <LinearLayout
@@ -219,7 +228,7 @@
         android:layout_height="wrap_content">
 
         <EditText
-            android:id="@+id/et_password"
+            android:id="@+id/et_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
@@ -228,7 +237,10 @@
             android:layout_marginLeft="80dp"
             android:layout_marginRight="80dp"
             android:layout_weight="1"
-            android:padding="5dp"/>
+            android:padding="5dp"
+            android:textAlignment="center"
+            android:fontFamily="@font/littera_regular"
+            android:textColor="@color/white"/>
     </LinearLayout>
 
     <LinearLayout

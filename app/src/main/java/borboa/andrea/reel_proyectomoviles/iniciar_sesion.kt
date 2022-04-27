@@ -40,9 +40,12 @@ class iniciar_sesion : AppCompatActivity() {
             }
         }
 
+        binding.btnRegister.setOnClickListener{
+            val intent = Intent(this,registrarse::class.java)
+            startActivity(intent)
+        }
 
-        var btn_register: Button = findViewById(R.id.btn_register) as Button
-        var btn_index: Button = findViewById(R.id.btn_index) as Button
+
         var txt_recoverypassword: TextView = findViewById(R.id.txt_recoverypassword)
         var txt_recoveryuser: TextView = findViewById(R.id.txt_recoveryuser)
 
@@ -55,12 +58,6 @@ class iniciar_sesion : AppCompatActivity() {
 
         txt_recoveryuser.setOnClickListener{
             var intent:Intent=Intent(this,RecoveryUserActivity::class.java)
-            startActivity(intent)
-        }
-
-
-        btn_register.setOnClickListener{
-            var intent:Intent= Intent(this, registrarse::class.java)
             startActivity(intent)
         }
 
