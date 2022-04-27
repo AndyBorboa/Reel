@@ -6,16 +6,27 @@ import androidx.recyclerview.widget.RecyclerView
 import android.os.Bundle
 import android.widget.Button
 import androidx.recyclerview.widget.LinearLayoutManager
+import borboa.andrea.reel_proyectomoviles.databinding.ActivityInicioBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 import java.util.ArrayList
 
 class InicioActivity : AppCompatActivity() {
+    private lateinit var auth: FirebaseAuth
+    private lateinit var binding:ActivityInicioBinding
+
+
     private lateinit var CarouselRecyclerview: RecyclerView
     private lateinit var PromosRecyclerview: RecyclerView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_inicio)
+
+        binding= ActivityInicioBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+        auth = Firebase.auth
 
         val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottom_navigation)
         bottomNavigationView.selectedItemId = R.id.inicio

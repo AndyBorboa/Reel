@@ -97,6 +97,9 @@
             android:background="@drawable/round_button"
             android:inputType="textPersonName"
             android:padding="5dp"
+            android:textAlignment="center"
+            android:fontFamily="@font/littera_regular"
+            android:textColor="@color/white"
             tools:ignore="TouchTargetSizeCheck" />
 
     </LinearLayout>
@@ -168,7 +171,10 @@
             android:padding="5dp"
             android:layout_marginLeft="80dp"
             android:layout_marginRight="80dp"
-            android:inputType="textPassword" />
+            android:inputType="textPassword"
+            android:textAlignment="center"
+            android:fontFamily="@font/littera_regular"
+            android:textColor="@color/white"/>
 
     </LinearLayout>
 

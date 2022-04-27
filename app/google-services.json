@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "177906115056",
+    "project_id": "proyectofinal-c6a6d",
+    "storage_bucket": "proyectofinal-c6a6d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:177906115056:android:964f1fc075549f841bbd35",
+        "android_client_info": {
+          "package_name": "borboa.andrea.reel_proyectomoviles"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "177906115056-maae9052qkhu1fqgn5q6ju1f4mv1so4k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAGY2RZwMct2o4qtdCCNdFkxqz1cO2Uey0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "177906115056-maae9052qkhu1fqgn5q6ju1f4mv1so4k.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
