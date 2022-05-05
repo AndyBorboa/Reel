@@ -11,6 +11,9 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
+import com.smarteist.autoimageslider.IndicatorView.animation.type.IndicatorAnimationType
+import com.smarteist.autoimageslider.SliderAnimations
+import com.smarteist.autoimageslider.SliderView
 import java.util.ArrayList
 
 class InicioActivity : AppCompatActivity() {
@@ -75,19 +78,38 @@ class InicioActivity : AppCompatActivity() {
             false
         })
 
+
+        var sliderView: SliderView? = null
+        var images = intArrayOf(
+            R.drawable.godzilla_vs_kong,
+            R.drawable.liga_de_la_justicia,
+            R.drawable.el_seor_de_los_anillos,
+            R.drawable.pastor_impostor
+        )
+
+        sliderView= findViewById(R.id.slider)
+        var sliderAdapter: SliderAdapter = SliderAdapter(images)
+        sliderView.setSliderAdapter(sliderAdapter)
+        sliderView.setIndicatorAnimation(IndicatorAnimationType.WORM)
+        sliderView.setSliderTransformAnimation(SliderAnimations.DEPTHTRANSFORMATION)
+        sliderView.startAutoCycle()
+
+
+
+
         //CarouselRecyclerView
-        CarouselRecyclerview = findViewById(R.id.CarouselRecyclerview)
-        CarouselRecyclerview.setHasFixedSize(true)
-        CarouselRecyclerview.setLayoutManager(LinearLayoutManager(this, RecyclerView.HORIZONTAL, false))
+       // CarouselRecyclerview = findViewById(R.id.CarouselRecyclerview)
+        //CarouselRecyclerview.setHasFixedSize(true)
+        //CarouselRecyclerview.setLayoutManager(LinearLayoutManager(this, RecyclerView.HORIZONTAL, false))
 
 
-        val imageList: MutableList<CarouselItem> = ArrayList<CarouselItem>()
-        imageList.add(CarouselItem(R.drawable.godzilla_vs_kong))
-        imageList.add(CarouselItem(R.drawable.liga_de_la_justicia))
-        imageList.add(CarouselItem(R.drawable.el_seor_de_los_anillos))
-        imageList.add(CarouselItem(R.drawable.pastor_impostor))
-        val carouselAdapter = CarouselAdapter(imageList)
-        CarouselRecyclerview.setAdapter(carouselAdapter)
+        //val imageList: MutableList<CarouselItem> = ArrayList<CarouselItem>()
+        //imageList.add(CarouselItem(R.drawable.godzilla_vs_kong))
+        //imageList.add(CarouselItem(R.drawable.liga_de_la_justicia))
+        //imageList.add(CarouselItem(R.drawable.el_seor_de_los_anillos))
+        //imageList.add(CarouselItem(R.drawable.pastor_impostor))
+        //val carouselAdapter = CarouselAdapter(imageList)
+        //CarouselRecyclerview.setAdapter(carouselAdapter)
 
         //PromosRecyclerView
         PromosRecyclerview = findViewById(R.id.PromosRecyclerview)

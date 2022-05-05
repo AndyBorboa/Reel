@@ -92,14 +92,14 @@ class CarteleraActivity : AppCompatActivity() {
 
     fun cargarPeliculas(){
 
-        comentarios.add(comentario("Rick Sanchez","25/marzo/2021","Todo lo que me esperaba y más- Un poco lenta en algunas partes, pero esa batalla final hizo que valiera completamente la pena. 100% recomendada sobre todo si eres fan de el Monsterverse ya que podemos esperar mucho más de esta saga de peliculas en el futuro."))
-        comentarios.add(comentario("RyanStartedTheFire","25/marzo/2021","Epico. Nada más que decir."))
-        comentarios.add(comentario("Parry Hotter","25/marzo/2021","Las partes de acción estuvieron bien pero hubo partes que se me hacían muy aburridas xp 4/5"))
-        comentarios.add(comentario("MrPotato","25/marzo/2021","TEAM KONG POR SIEMPRE!!!"))
-        comentarios.add(comentario("Joanna K","25/marzo/2021","La peli esta buenisima, no era muy fan de las peliculas del Monsterverse pero luego de ver algo tán genial creo que me dare tiempo de ver las otras de Godzilla y Kong. Espero que saquen más ;)"))
-        comentarios.add(comentario("Arceus Inmortal","26/marzo/2021","Todo lo que me esperaba y más- Un poco lenta en algunas partes, pero esa batalla final hizo que valiera completamente la pena. 100% recomendada sobre todo si eres fan de el Monsterverse ya que podemos esperar mucho más de esta saga de peliculas en el futuro."))
-        comentarios.add(comentario("skereeeee","26/marzo/2021","Godzilla con aliento atómico, puslo nuclear, regeneración instantánea y piel de obsidiana <<<<< Kong a puro madrazo limpio xdxd"))
-        comentarios.add(comentario("M Shadows","26/marzo/2021","No estaba seguro de cómo Kong le iba a dar pelea a Godzilla. Sin hacer spoilers, me sorprendio bastante. Claramente estas son versiones de los monstruos que se diferecian un poco de las que hemos visto antes."))
+        comentarios.add(comentario("Rick Sanchez","25/marzo/2021","Todo lo que me esperaba y más- Un poco lenta en algunas partes, pero esa batalla final hizo que valiera completamente la pena. 100% recomendada sobre todo si eres fan de el Monsterverse ya que podemos esperar mucho más de esta saga de peliculas en el futuro.",5.0f))
+        comentarios.add(comentario("RyanStartedTheFire","25/marzo/2021","Epico. Nada más que decir.",5.0f))
+        comentarios.add(comentario("Parry Hotter","25/marzo/2021","Las partes de acción estuvieron bien pero hubo partes que se me hacían muy aburridas xp 4/5",3.0f))
+        comentarios.add(comentario("MrPotato","25/marzo/2021","TEAM KONG POR SIEMPRE!!!",5.0f))
+        comentarios.add(comentario("Joanna K","25/marzo/2021","La peli esta buenisima, no era muy fan de las peliculas del Monsterverse pero luego de ver algo tán genial creo que me dare tiempo de ver las otras de Godzilla y Kong. Espero que saquen más ;)",4.0f))
+        comentarios.add(comentario("Arceus Inmortal","26/marzo/2021","Todo lo que me esperaba y más- Un poco lenta en algunas partes, pero esa batalla final hizo que valiera completamente la pena. 100% recomendada sobre todo si eres fan de el Monsterverse ya que podemos esperar mucho más de esta saga de peliculas en el futuro.",4.0f))
+        comentarios.add(comentario("skereeeee","26/marzo/2021","Godzilla con aliento atómico, puslo nuclear, regeneración instantánea y piel de obsidiana <<<<< Kong a puro madrazo limpio xdxd",5.0f))
+        comentarios.add(comentario("M Shadows","26/marzo/2021","No estaba seguro de cómo Kong le iba a dar pelea a Godzilla. Sin hacer spoilers, me sorprendio bastante. Claramente estas son versiones de los monstruos que se diferecian un poco de las que hemos visto antes.",5.0f))
 
         peliculas.add(peli(R.drawable.king_kong,"Godzila vs Kong",
             "Acción",
@@ -267,6 +267,7 @@ class CarteleraActivity : AppCompatActivity() {
             var image: ImageView = vista.findViewById(R.id.imagen_peliculacartelera) as ImageView
             var title: TextView = vista.findViewById(R.id.titulo_peliculacartelera) as TextView
             var categoria: TextView = vista.findViewById(R.id.categoria_peliculacartelera) as TextView
+            var estrellas: RatingBar=vista.findViewById(R.id.ratingBar) as RatingBar
 
             image.setImageResource(pelicula.imagen)
             title.setText(pelicula.titulo)

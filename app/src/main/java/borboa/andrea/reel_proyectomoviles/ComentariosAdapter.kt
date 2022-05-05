@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.RatingBar
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
@@ -14,11 +15,13 @@ class ComentariosAdapter(val comentariosList: List<comentario>) :
         val usuarioView : TextView
         val fechaView : TextView
         val comentarioView : TextView
+        val estrellasView : RatingBar
 
         init {
             usuarioView = itemView.findViewById(R.id.nombreusuario)
             fechaView = itemView.findViewById(R.id.fecha)
             comentarioView = itemView.findViewById(R.id.comentariousuario)
+            estrellasView = itemView.findViewById(R.id.ratingBar_cines)
         }
     }
 
@@ -31,6 +34,7 @@ class ComentariosAdapter(val comentariosList: List<comentario>) :
         holder.usuarioView.setText(comentariosList[position].nombreUsuario)
         holder.fechaView.setText(comentariosList[position].fecha)
         holder.comentarioView.setText(comentariosList[position].comentario)
+        holder.estrellasView.setRating(comentariosList[position].estrellas)
     }
 
     override fun getItemCount(): Int {

@@ -4,4 +4,5 @@ import java.io.Serializable
 
 data class comentario (var nombreUsuario:String,
                        var fecha:String,
-                       var comentario:String): Serializable
+                       var comentario:String,
+                       var estrellas:Float): Serializable
