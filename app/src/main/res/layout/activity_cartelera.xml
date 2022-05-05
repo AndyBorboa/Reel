@@ -67,14 +67,14 @@
         <GridView
             android:id="@+id/gridview"
             android:layout_width="match_parent"
-            android:layout_height="529dp"
+            android:layout_height="530dp"
             android:numColumns="3" />
     </LinearLayout>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         app:itemBackground="@color/color_background"
         app:itemIconTint="@color/white"
         app:itemTextColor="@color/white"
