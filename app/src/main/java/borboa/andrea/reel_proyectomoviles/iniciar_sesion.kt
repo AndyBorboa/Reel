@@ -5,86 +5,71 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
+import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 import borboa.andrea.reel_proyectomoviles.databinding.ActivityIniciarSesionBinding
 import com.google.firebase.auth.ktx.auth
+import com.google.firebase.database.*
 import com.google.firebase.ktx.Firebase
 
 class iniciar_sesion : AppCompatActivity() {
-    private lateinit var auth: FirebaseAuth
-    private lateinit var binding: ActivityIniciarSesionBinding
-
+    val databaseReference: DatabaseReference = FirebaseDatabase.getInstance().getReferenceFromUrl("https://proyectofinal-c6a6d-default-rtdb.firebaseio.com/")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_iniciar_sesion)
 
-        binding= ActivityIniciarSesionBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+        val nombreUsuario: EditText = findViewById(R.id.et_nick)
+        val contraseña: EditText = findViewById(R.id.et_contraseña)
+        val btnLogin: Button = findViewById(R.id.btn_index)
+        val btnRegister: Button = findViewById(R.id.btn_register)
 
-        auth = Firebase.auth
+        btnLogin.setOnClickListener{
+            var nombreUsuarioTxt: String = nombreUsuario.getText().toString()
+            var contraseñaTxt: String = contraseña.getText().toString()
 
-        binding.btnIndex.setOnClickListener {
-            val mEmail=binding.etNick.text.toString()
-            val mPassword=binding.etContraseA.text.toString()
+            if(nombreUsuarioTxt.isEmpty() || contraseñaTxt.isEmpty()){
 
-            when{
-                mEmail.isEmpty() || mPassword.isEmpty()->{
-                    Toast.makeText(baseContext, "E-mail o contraseña Incorrectos.",
-                        Toast.LENGTH_SHORT).show()
-                }else ->{
-                    SignIn(mEmail,mPassword)
-                }
+                Toast.makeText(this,"Por favor ingresa todos los datos solicitados.",
+                    Toast.LENGTH_SHORT).show()
+            }else{
+                databaseReference.child("usuarios").addListenerForSingleValueEvent(object:
+                    ValueEventListener {
+                    override fun onCancelled(error: DatabaseError) {
+
+                    }
+
+                    override fun onDataChange(snapshot: DataSnapshot) {
+                        if(snapshot.hasChild(nombreUsuarioTxt)){
+
+                            val getPassword:String = snapshot.child(nombreUsuarioTxt).child("contraseña").getValue().toString()
+                            if(getPassword.equals(contraseñaTxt)){
+                                Toast.makeText(applicationContext,"Sesion iniciada correctamente.",
+                                    Toast.LENGTH_SHORT).show()
+                                startActivity(Intent(applicationContext, InicioActivity::class.java))
+
+                            }else{
+                                Toast.makeText(applicationContext,"Contraseña incorrecta.",
+                                    Toast.LENGTH_SHORT).show()
+                            }
+
+                        }else{
+                            Toast.makeText(applicationContext,"El nombre de usuario no existe.",
+                                Toast.LENGTH_SHORT).show()
+                        }
+                    }
+                })
             }
         }
 
-        binding.btnRegister.setOnClickListener{
-            val intent = Intent(this,registrarse::class.java)
-            startActivity(intent)
+        btnRegister.setOnClickListener {
+            startActivity(Intent(this, registrarse::class.java))
+
         }
 
 
-        var txt_recoverypassword: TextView = findViewById(R.id.txt_recoverypassword)
-        var txt_recoveryuser: TextView = findViewById(R.id.txt_recoveryuser)
-
-
-
-        txt_recoverypassword.setOnClickListener{
-            var intent:Intent=Intent(this,PasswordRecoveryActivity::class.java)
-            startActivity(intent)
-        }
-
-        txt_recoveryuser.setOnClickListener{
-            var intent:Intent=Intent(this,RecoveryUserActivity::class.java)
-            startActivity(intent)
-        }
-
-    }
-
-    private fun SignIn(email:String,password:String){
-        auth.signInWithEmailAndPassword(email, password)
-            .addOnCompleteListener(this) { task ->
-                if (task.isSuccessful) {
-                    // Sign in success, update UI with the signed-in user's information
-                    Log.d("TAG", "signInWithEmail:success")
-                    reload()
-                    //val user = auth.currentUser
-                    //updateUI(user)
-                } else {
-                    // If sign in fails, display a message to the user.
-                    Log.w("TAG", "signInWithEmail:failure", task.exception)
-                    Toast.makeText(baseContext, "E-mail o contraseña incorrectos.",
-                        Toast.LENGTH_SHORT).show()
-                    //updateUI(null)
-                }
-            }
-    }
-
-    private fun reload(){
-        val intent = Intent(this,InicioActivity::class.java)
-        this.startActivity(intent)
     }
 
 
