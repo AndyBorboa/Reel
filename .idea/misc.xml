@@ -67,8 +67,10 @@
         <entry key="..\:/Aplicaciones Moviles/Reel_ProyectoMoviles/app/src/main/res/menu/options_menu.xml" value="0.19947916666666668" />
         <entry key="..\:/Aplicaciones Moviles/Reel_ProyectoMoviles/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.136" />
         <entry key="..\:/Users/andre/OneDrive/Documentos/GitHub/ProyectoReparado/app/src/main/res/drawable/bordedos.xml" value="0.155" />
-        <entry key="..\:/Users/andre/OneDrive/Documentos/GitHub/ProyectoReparado/app/src/main/res/layout/activity_cartelera.xml" value="0.12552083333333333" />
-        <entry key="..\:/Users/andre/OneDrive/Documentos/GitHub/ProyectoReparado/app/src/main/res/layout/activity_cines.xml" value="0.12552083333333333" />
+        <entry key="..\:/Users/andre/OneDrive/Documentos/GitHub/ProyectoReparado/app/src/main/res/drawable/round_button.xml" value="0.142" />
+        <entry key="..\:/Users/andre/OneDrive/Documentos/GitHub/ProyectoReparado/app/src/main/res/drawable/searchviewbackground.xml" value="0.142" />
+        <entry key="..\:/Users/andre/OneDrive/Documentos/GitHub/ProyectoReparado/app/src/main/res/layout/activity_cartelera.xml" value="0.22" />
+        <entry key="..\:/Users/andre/OneDrive/Documentos/GitHub/ProyectoReparado/app/src/main/res/layout/activity_cines.xml" value="0.16" />
         <entry key="..\:/Users/andre/OneDrive/Documentos/GitHub/ProyectoReparado/app/src/main/res/layout/activity_comentario.xml" value="0.21145833333333333" />
         <entry key="..\:/Users/andre/OneDrive/Documentos/GitHub/ProyectoReparado/app/src/main/res/layout/activity_estrenos.xml" value="0.12552083333333333" />
         <entry key="..\:/Users/andre/OneDrive/Documentos/GitHub/ProyectoReparado/app/src/main/res/layout/activity_filtro.xml" value="0.21145833333333333" />
@@ -85,6 +87,7 @@
         <entry key="..\:/Users/andre/OneDrive/Documentos/GitHub/ProyectoReparado/app/src/main/res/layout/item_horarios.xml" value="0.33" />
         <entry key="..\:/Users/andre/OneDrive/Documentos/GitHub/ProyectoReparado/app/src/main/res/layout/promos_item.xml" value="0.2" />
         <entry key="..\:/Users/andre/OneDrive/Documentos/GitHub/ProyectoReparado/app/src/main/res/layout/slider_item.xml" value="0.2" />
+        <entry key="..\:/Users/andre/OneDrive/Documentos/GitHub/ProyectoReparado/app/src/main/res/menu/toolbar.xml" value="0.18" />
       </map>
     </option>
   </component>

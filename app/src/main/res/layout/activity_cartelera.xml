@@ -22,41 +22,35 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="vertical">
 
-
-        <Button
-            android:layout_width="wrap_content"
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="10dp"
-            android:backgroundTint="@color/gris"
-            android:drawableLeft="@drawable/ic_ubicacion"
-            android:fontFamily="@font/littera_regular"
-            android:text="Cd. Obregón, Sonora, Méx."
-            android:textAllCaps="false"
-            android:textColor="@color/white"
-            android:textSize="10dp"
-            android:textStyle="bold"
-            app:cornerRadius="20dp" />
+            android:background="@color/color_background"
 
-        <Button
-            android:id="@+id/btn_buscar"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginLeft="30dp"
-            android:background="@drawable/ic_busqueda" />
-        <Button
-            android:id="@+id/btn_filtros"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginLeft="3dp"
-            android:background="@drawable/ic_filtros"/>
+            >
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="10dp"
+                android:backgroundTint="@color/gris"
+                android:drawableLeft="@drawable/ic_ubicacion"
+                android:fontFamily="@font/littera_regular"
+                android:text="Cd. Obregón, Sonora, Méx."
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="10dp"
+                android:textStyle="bold"
+                app:cornerRadius="20dp"/>
+
+        </androidx.appcompat.widget.Toolbar>
+
 
     </LinearLayout>
-
 
     <LinearLayout
         android:layout_width="match_parent"

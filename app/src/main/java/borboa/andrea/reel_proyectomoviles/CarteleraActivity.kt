@@ -2,15 +2,16 @@ package borboa.andrea.reel_proyectomoviles
 
 import android.content.Context
 import android.content.Intent
+import android.graphics.Color.*
 import android.os.Bundle
-import android.os.Parcel
-import android.os.Parcelable
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.SearchView
+import androidx.core.view.size
+import borboa.andrea.reel_proyectomoviles.databinding.ActivityCarteleraBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
+
 
 class CarteleraActivity : AppCompatActivity() {
 
@@ -19,9 +20,12 @@ class CarteleraActivity : AppCompatActivity() {
     var adapter: ItemAdapter? = null
     var peliculasAdapter: ItemAdapter?= null
 
+    lateinit var binding : ActivityCarteleraBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_cartelera)
+
 
         val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottom_navigation)
         bottomNavigationView.selectedItemId = R.id.cartelera
@@ -78,16 +82,32 @@ class CarteleraActivity : AppCompatActivity() {
 
         gridView_movies.adapter=peliculasAdapter
 
-        var botonFiltro:Button=findViewById(R.id.btn_filtros) as Button
 
-        botonFiltro.setOnClickListener {
-            var intent:Intent=Intent(this,FiltroActivity::class.java)
-            startActivity(intent)
-        }
+
+        val toolbar:androidx.appcompat.widget.Toolbar = findViewById(R.id.toolbar)
+        setSupportActionBar(toolbar)
+        getSupportActionBar()?.setDisplayShowTitleEnabled(false)
 
 
     }
 
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.toolbar,menu)
+
+        val search : MenuItem? = menu?.findItem(R.id.searchview)
+        val searchView: SearchView = search?.actionView as  androidx.appcompat.widget.SearchView
+        searchView.setBackgroundResource(R.drawable.round_button)
+
+        
+
+
+        return super.onCreateOptionsMenu(menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+
+        return super.onOptionsItemSelected(item)
+    }
 
 
     fun cargarPeliculas(){
