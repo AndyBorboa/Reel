@@ -8,9 +8,16 @@ import android.widget.TextView
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class PerfilActivity : AppCompatActivity() {
+
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_perfil)
+        val usuario: String? = getIntent().getStringExtra("usuario")
+
+        var nombreusuarioView: TextView = findViewById(R.id.txtusuario)
+        nombreusuarioView.setText(usuario)
 
 
 

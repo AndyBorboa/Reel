@@ -9,7 +9,6 @@
     <ImageView
         android:id="@+id/imagePromo"
         android:layout_width="wrap_content"
-        android:layout_marginTop="3dp"
         android:layout_height="160dp"
         app:srcCompat="@drawable/dosporuno" />
 

@@ -4,9 +4,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import com.bumptech.glide.Glide
 import com.smarteist.autoimageslider.SliderViewAdapter
 
-class SliderAdapter (private var images:IntArray):SliderViewAdapter<SliderAdapter.Holder>(){
+class SliderAdapter(private var images: ArrayList<String?>):SliderViewAdapter<SliderAdapter.Holder>(){
     inner class Holder (itemView: View):ViewHolder(itemView){
         var imageView: ImageView =itemView.findViewById(R.id.imageView)
 
@@ -24,7 +25,8 @@ class SliderAdapter (private var images:IntArray):SliderViewAdapter<SliderAdapte
 
     override fun onBindViewHolder(viewHolder: SliderAdapter.Holder?, position: Int) {
         if(viewHolder!=null) {
-            viewHolder.imageView.setImageResource(images[position])
+            Glide.with(viewHolder.itemView.getContext()).load(images.get(position)).into(viewHolder.imageView);
+            //viewHolder.imageView.setImageResource(images[position])
         }
     }
 }

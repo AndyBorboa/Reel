@@ -1,5 +1,6 @@
 package borboa.andrea.reel_proyectomoviles
 
+import android.app.SearchManager
 import android.content.Context
 import android.content.Intent
 import android.graphics.Color.*
@@ -11,14 +12,18 @@ import androidx.appcompat.widget.SearchView
 import androidx.core.view.size
 import borboa.andrea.reel_proyectomoviles.databinding.ActivityCarteleraBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import java.util.*
+import kotlin.collections.ArrayList
 
 
 class CarteleraActivity : AppCompatActivity() {
 
     val peliculas= ArrayList<peli>()
     val comentarios=ArrayList<comentario>()
-    var adapter: ItemAdapter? = null
+    val displayList = ArrayList<peli>()
     var peliculasAdapter: ItemAdapter?= null
+    lateinit var gridView_movies:GridView
+
 
     lateinit var binding : ActivityCarteleraBinding
 
@@ -76,11 +81,11 @@ class CarteleraActivity : AppCompatActivity() {
 
         cargarPeliculas()
 
-        peliculasAdapter = ItemAdapter(this,peliculas)
-
-        var gridView_movies:GridView = findViewById(R.id.gridview) as GridView
+        peliculasAdapter = ItemAdapter(this,displayList)
+        gridView_movies = findViewById(R.id.gridview)
 
         gridView_movies.adapter=peliculasAdapter
+
 
 
 
@@ -98,7 +103,44 @@ class CarteleraActivity : AppCompatActivity() {
         val searchView: SearchView = search?.actionView as  androidx.appcompat.widget.SearchView
         searchView.setBackgroundResource(R.drawable.round_button)
 
-        
+        val manager = getSystemService(Context.SEARCH_SERVICE) as SearchManager
+
+        searchView.setSearchableInfo(manager.getSearchableInfo(componentName))
+
+        if(search!=null){
+            val searchView = search.actionView as SearchView
+
+            searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener{
+                override fun onQueryTextSubmit(query: String?): Boolean {
+                    return true
+                }
+
+                override fun onQueryTextChange(newText: String?): Boolean {
+
+                    if(newText!!.isNotEmpty()){
+                        displayList.clear()
+                        val serch = newText.toLowerCase(Locale.getDefault())
+                        peliculas.forEach{
+                            if(it.titulo.toLowerCase(Locale.getDefault()).contains(serch)){
+                                displayList.add(it)
+                                //peliculasAdapter = ItemAdapter(this@CarteleraActivity,peliculas)
+                                peliculasAdapter!!.notifyDataSetChanged()
+
+                            }
+                        }
+                    }else{
+                        displayList.clear()
+                        displayList.addAll(peliculas)
+                        //peliculasAdapter = ItemAdapter(this@CarteleraActivity,peliculas)
+                        peliculasAdapter!!.notifyDataSetChanged()
+
+                    }
+                    return true
+                }
+
+            })
+        }
+
 
 
         return super.onCreateOptionsMenu(menu)
@@ -255,6 +297,8 @@ class CarteleraActivity : AppCompatActivity() {
             "<iframe width=\"100%\" height=\"100%\" src=\"https://www.youtube.com/embed/d0o7tEl7CP4\" frameborder=\"0\" allowfullscreen></iframe>",
             "Un adicto al trabajo pone en pausa su vida rutinaria para cumplir el sueño de su abuelo: visitar los lugares más emblemáticos de la Ciudad de México y encontrar el amor."
             ,comentarios))
+
+        displayList.addAll(peliculas)
     }
 
 

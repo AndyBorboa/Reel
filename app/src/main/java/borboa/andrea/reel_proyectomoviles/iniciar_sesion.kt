@@ -1,5 +1,6 @@
 package borboa.andrea.reel_proyectomoviles
 
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -48,7 +49,10 @@ class iniciar_sesion : AppCompatActivity() {
                             if(getPassword.equals(contraseñaTxt)){
                                 Toast.makeText(applicationContext,"Sesion iniciada correctamente.",
                                     Toast.LENGTH_SHORT).show()
-                                startActivity(Intent(applicationContext, InicioActivity::class.java))
+
+                                var intent = Intent(applicationContext, InicioActivity::class.java)
+                                intent.putExtra("usuario",nombreUsuarioTxt)
+                                startActivity(intent)
 
                             }else{
                                 Toast.makeText(applicationContext,"Contraseña incorrecta.",

@@ -64,7 +64,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="15dp"
+                android:layout_marginLeft="10dp"
                 android:layout_marginTop="15dp"
                 android:fontFamily="@font/littera_regular"
                 android:text="Promociones cerca de ti"
@@ -78,10 +78,11 @@
 
 
                 <androidx.recyclerview.widget.RecyclerView
-
                     android:id="@+id/PromosRecyclerview"
                     android:layout_width="match_parent"
                     android:layout_height="360dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintVertical_bias="1.0"

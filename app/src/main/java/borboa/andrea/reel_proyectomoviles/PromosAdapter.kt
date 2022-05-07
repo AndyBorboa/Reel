@@ -6,8 +6,9 @@ import android.view.ViewGroup
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.ImageView
+import com.bumptech.glide.Glide
 
-class PromosAdapter(val promosList: List<PromosItem>) :
+class PromosAdapter(val promosList: ArrayList<String?>) :
     RecyclerView.Adapter<PromosViewHolder>() {
     inner class PromosViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
          val mImageView: ImageView
@@ -23,7 +24,7 @@ class PromosAdapter(val promosList: List<PromosItem>) :
     }
 
     override fun onBindViewHolder(holder: PromosViewHolder, position: Int) {
-        holder.mImageView.setImageResource(promosList[position].image)
+        Glide.with(holder.itemView.getContext()).load(promosList.get(position)).into(holder.mImageView);
     }
 
     override fun getItemCount(): Int {
