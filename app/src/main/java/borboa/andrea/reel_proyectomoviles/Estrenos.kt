@@ -3,7 +3,7 @@ package borboa.andrea.reel_proyectomoviles
 import android.widget.VideoView
 
 data class Estrenos(
-    var videoUrl: String?,
+    var videoUrl: String?="",
     val titulo:String="",
     val subtitulo:String="",
     val clasificacion:String="",
