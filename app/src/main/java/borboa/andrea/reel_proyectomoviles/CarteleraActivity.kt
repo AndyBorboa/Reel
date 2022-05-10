@@ -13,6 +13,7 @@ import com.bumptech.glide.Glide
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.database.*
 import java.util.*
+import kotlin.collections.ArrayList
 
 
 class CarteleraActivity : AppCompatActivity() {
@@ -21,6 +22,7 @@ class CarteleraActivity : AppCompatActivity() {
     var peliculasAdapter: ItemAdapter? = null
     lateinit var gridView_movies: GridView
     var displayPeliculas = ArrayList<peli>()
+
 
     private lateinit var reference: DatabaseReference
 
@@ -149,19 +151,30 @@ class CarteleraActivity : AppCompatActivity() {
 
     fun datos() {
         val rootRef = FirebaseDatabase.getInstance().reference
-        reference = rootRef.child("peliculas")
-        reference.addValueEventListener(object : ValueEventListener {
+       rootRef.child("peliculas").addValueEventListener(object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
-                for (snapshot in dataSnapshot.children) {
-                    val pelis = snapshot.getValue(peli::class.java)
-                    displayPeliculas.add(pelis!!)
+                if(dataSnapshot.exists()){
+                    val imagen:String = dataSnapshot.child("datos").child("imagen").getValue().toString()
+                    val titulo:String = dataSnapshot.child("datos").child("titulo").child("titulo").getValue().toString()
+                    val categoria:String = dataSnapshot.child("datos").child("categoria").getValue().toString()
+                    val subtitulo:String = dataSnapshot.child("datos").child("subtitulo").getValue().toString()
+                    val clasificacion:String=dataSnapshot.child("datos").child("clasificacion").getValue().toString()
+                    val duracion:String=dataSnapshot.child("datos").child("duracion").getValue().toString()
+                    val director:String=dataSnapshot.child("datos").child("director").getValue().toString()
+                    val reparto:String=dataSnapshot.child("datos").child("reparto").getValue().toString()
+                    val videoUrl:String=dataSnapshot.child("datos").child("videoUrl").getValue().toString()
+                    val sinopsis:String=dataSnapshot.child("datos").child("sinopsis").getValue().toString()
+                    val comentarios: java.util.ArrayList<comentario> = dataSnapshot.child("comentarios").child("comentarios").getValue() as ArrayList<comentario>
+
+                    displayPeliculas.add(peli(imagen,titulo,categoria,subtitulo,clasificacion,duracion,director,reparto,videoUrl,sinopsis,comentarios))
                     displayList.addAll(displayPeliculas)
 
+                    peliculasAdapter = ItemAdapter(this@CarteleraActivity, displayList)
+                    gridView_movies = findViewById(R.id.gridview)
+                    gridView_movies.adapter = peliculasAdapter
 
                 }
-                peliculasAdapter = ItemAdapter(this@CarteleraActivity, displayList)
-                gridView_movies = findViewById(R.id.gridview)
-                gridView_movies.adapter = peliculasAdapter
+
 
             }
 
