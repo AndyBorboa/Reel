@@ -17,7 +17,7 @@ class PeliculasActivity : AppCompatActivity() {
         val bundle = intent.extras
 
         if (bundle != null) {
-            var imagen = bundle.getInt("imagen")
+            var imagen = bundle.getString("imagen")
             var titulo = bundle.getString("titulo")
             var subtitulo = bundle.getString("subtitulo")
             var clasificacion = bundle.getString("clasificacion")
@@ -34,7 +34,7 @@ class PeliculasActivity : AppCompatActivity() {
 
             val args = Bundle()
 
-            args.putInt("imagen", imagen)
+            args.putString("imagen", imagen)
             args.putString("titulo", titulo)
             args.putString("subtitulo",subtitulo)
             args.putString("clasificacion",clasificacion)
