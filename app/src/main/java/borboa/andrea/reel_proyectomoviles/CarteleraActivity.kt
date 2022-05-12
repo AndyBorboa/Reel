@@ -12,6 +12,7 @@ import borboa.andrea.reel_proyectomoviles.databinding.ActivityCarteleraBinding
 import com.bumptech.glide.Glide
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.database.*
+import com.google.firebase.ktx.Firebase
 import java.util.*
 import kotlin.collections.ArrayList
 
@@ -22,6 +23,11 @@ class CarteleraActivity : AppCompatActivity() {
     var peliculasAdapter: ItemAdapter? = null
     lateinit var gridView_movies: GridView
     var displayPeliculas = ArrayList<peli>()
+    val comentarios = ArrayList<comentario>()
+
+    private lateinit var bdref:DatabaseReference
+
+
 
 
     private lateinit var reference: DatabaseReference
@@ -150,31 +156,244 @@ class CarteleraActivity : AppCompatActivity() {
 
 
     fun datos() {
-        val rootRef = FirebaseDatabase.getInstance().reference
-       rootRef.child("peliculas").addValueEventListener(object : ValueEventListener {
+        bdref= FirebaseDatabase.getInstance().getReference("peliculas1")
+        bdref.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
+                var imagen:String? =null
+                var titulo:String?=null
+                var categoria:String? =null
+                var subtitulo:String? =null
+                var clasificacion:String? =null
+                var duracion:String? =null
+                var director:String? =null
+                var reparto:String?=null
+                var videoUrl:String?=null
+                var sinopsis:String?=null
+
+                var usuario:String? =null
+                var fecha:String?=null
+                var comentario:String?=null
+                var estrellas:Float?=null
+
                 if(dataSnapshot.exists()){
-                    val imagen:String = dataSnapshot.child("datos").child("imagen").getValue().toString()
-                    val titulo:String = dataSnapshot.child("datos").child("titulo").child("titulo").getValue().toString()
-                    val categoria:String = dataSnapshot.child("datos").child("categoria").getValue().toString()
-                    val subtitulo:String = dataSnapshot.child("datos").child("subtitulo").getValue().toString()
-                    val clasificacion:String=dataSnapshot.child("datos").child("clasificacion").getValue().toString()
-                    val duracion:String=dataSnapshot.child("datos").child("duracion").getValue().toString()
-                    val director:String=dataSnapshot.child("datos").child("director").getValue().toString()
-                    val reparto:String=dataSnapshot.child("datos").child("reparto").getValue().toString()
-                    val videoUrl:String=dataSnapshot.child("datos").child("videoUrl").getValue().toString()
-                    val sinopsis:String=dataSnapshot.child("datos").child("sinopsis").getValue().toString()
-                    val comentarios: java.util.ArrayList<comentario> = dataSnapshot.child("comentarios").child("comentarios").getValue() as ArrayList<comentario>
+                    val snapshotpeli : DataSnapshot = dataSnapshot.child("peli1")
+                    val snapshotpeli1 : DataSnapshot = dataSnapshot.child("peli2")
+                    val snapshotpeli2 : DataSnapshot = dataSnapshot.child("peli3")
+                    val snapshotpeli3 : DataSnapshot = dataSnapshot.child("peli4")
+                    val snapshotpeli4 : DataSnapshot = dataSnapshot.child("peli5")
+                    val snapshotpeli5 : DataSnapshot = dataSnapshot.child("peli6")
+                    val snapshotpeli6 : DataSnapshot = dataSnapshot.child("peli7")
+                    val snapshotpeli7 : DataSnapshot = dataSnapshot.child("peli8")
+                    val snapshotpeli8 : DataSnapshot = dataSnapshot.child("peli9")
+                    val snapshotpeli9 : DataSnapshot = dataSnapshot.child("peli10")
+                    val snapshotpeli10 : DataSnapshot = dataSnapshot.child("peli11")
+                    val snapshotpeli11 : DataSnapshot = dataSnapshot.child("peli12")
+
+                    val snapshotcoments : DataSnapshot = snapshotpeli.child("comentarios/coment1")
+                    val snapshotcoments2 : DataSnapshot = snapshotpeli.child("comentarios/coment2")
+                    val snapshotcoments3 : DataSnapshot = snapshotpeli.child("comentarios/coment3")
+                    val snapshotcoments4 : DataSnapshot = snapshotpeli.child("comentarios/coment4")
+                    val snapshotcoments5 : DataSnapshot = snapshotpeli.child("comentarios/coment5")
+                    val snapshotcoments6 : DataSnapshot = snapshotpeli.child("comentarios/coment6")
+                    val snapshotcoments7 : DataSnapshot = snapshotpeli.child("comentarios/coment7")
+                    val snapshotcoments8 : DataSnapshot = snapshotpeli.child("comentarios/coment8")
+
+                        imagen= snapshotpeli.child("imagen").getValue().toString()
+                        titulo= snapshotpeli.child("titulo").getValue().toString()
+                        categoria= snapshotpeli.child("categoria").getValue().toString()
+                        subtitulo= snapshotpeli.child("subtitulo").getValue().toString()
+                        clasificacion=snapshotpeli.child("clasificacion").getValue().toString()
+                        duracion=snapshotpeli.child("duracion").getValue().toString()
+                        director=snapshotpeli.child("director").getValue().toString()
+                        reparto=snapshotpeli.child("reparto").getValue().toString()
+                        videoUrl=snapshotpeli.child("videoUrl").getValue().toString()
+                        sinopsis=snapshotpeli.child("sinopsis").getValue().toString()
+
+                        usuario= snapshotcoments.child("usuario").getValue().toString()
+                        fecha= snapshotcoments.child("fecha").getValue().toString()
+                        comentario= snapshotcoments.child("comentario").getValue().toString()
+                        estrellas=(snapshotcoments.child("estrellas").getValue().toString()).toFloat()
+
+                        comentarios.add(comentario(usuario,fecha,comentario,estrellas))
+
+                        usuario= snapshotcoments2.child("usuario").getValue().toString()
+                        fecha= snapshotcoments2.child("fecha").getValue().toString()
+                        comentario= snapshotcoments2.child("comentario").getValue().toString()
+                        estrellas=(snapshotcoments2.child("estrellas").getValue().toString()).toFloat()
+                    comentarios.add(comentario(usuario,fecha,comentario,estrellas))
+
+                    usuario= snapshotcoments3.child("usuario").getValue().toString()
+                    fecha= snapshotcoments3.child("fecha").getValue().toString()
+                    comentario= snapshotcoments3.child("comentario").getValue().toString()
+                    estrellas=(snapshotcoments3.child("estrellas").getValue().toString()).toFloat()
+                    comentarios.add(comentario(usuario,fecha,comentario,estrellas))
+
+                    usuario= snapshotcoments4.child("usuario").getValue().toString()
+                    fecha= snapshotcoments4.child("fecha").getValue().toString()
+                    comentario= snapshotcoments4.child("comentario").getValue().toString()
+                    estrellas=(snapshotcoments4.child("estrellas").getValue().toString()).toFloat()
+                    comentarios.add(comentario(usuario,fecha,comentario,estrellas))
+
+                    usuario= snapshotcoments5.child("usuario").getValue().toString()
+                    fecha= snapshotcoments5.child("fecha").getValue().toString()
+                    comentario= snapshotcoments5.child("comentario").getValue().toString()
+                    estrellas=(snapshotcoments5.child("estrellas").getValue().toString()).toFloat()
+                    comentarios.add(comentario(usuario,fecha,comentario,estrellas))
+
+                    usuario= snapshotcoments6.child("usuario").getValue().toString()
+                    fecha= snapshotcoments6.child("fecha").getValue().toString()
+                    comentario= snapshotcoments6.child("comentario").getValue().toString()
+                    estrellas=(snapshotcoments6.child("estrellas").getValue().toString()).toFloat()
+                    comentarios.add(comentario(usuario,fecha,comentario,estrellas))
+
+                    usuario= snapshotcoments7.child("usuario").getValue().toString()
+                    fecha= snapshotcoments7.child("fecha").getValue().toString()
+                    comentario= snapshotcoments7.child("comentario").getValue().toString()
+                    estrellas=(snapshotcoments7.child("estrellas").getValue().toString()).toFloat()
+                    comentarios.add(comentario(usuario,fecha,comentario,estrellas))
+                    displayPeliculas.add(peli(imagen,titulo,categoria,subtitulo,clasificacion,duracion,director,reparto,videoUrl,sinopsis,comentarios))
+
+
+                        imagen= snapshotpeli1.child("imagen").getValue().toString()
+                        titulo= snapshotpeli1.child("titulo").getValue().toString()
+                        categoria= snapshotpeli1.child("categoria").getValue().toString()
+                        subtitulo= snapshotpeli1.child("subtitulo").getValue().toString()
+                        clasificacion=snapshotpeli1.child("clasificacion").getValue().toString()
+                        duracion=snapshotpeli1.child("duracion").getValue().toString()
+                        director=snapshotpeli1.child("director").getValue().toString()
+                        reparto=snapshotpeli1.child("reparto").getValue().toString()
+                        videoUrl=snapshotpeli1.child("videoUrl").getValue().toString()
+                        sinopsis=snapshotpeli1.child("sinopsis").getValue().toString()
+
+                    displayPeliculas.add(peli(imagen,titulo,categoria,subtitulo,clasificacion,duracion,director,reparto,videoUrl,sinopsis,comentarios))
+
+
+                    imagen= snapshotpeli2.child("imagen").getValue().toString()
+                    titulo= snapshotpeli2.child("titulo").getValue().toString()
+                    categoria= snapshotpeli2.child("categoria").getValue().toString()
+                    subtitulo= snapshotpeli2.child("subtitulo").getValue().toString()
+                    clasificacion=snapshotpeli2.child("clasificacion").getValue().toString()
+                    duracion=snapshotpeli2.child("duracion").getValue().toString()
+                    director=snapshotpeli2.child("director").getValue().toString()
+                    reparto=snapshotpeli2.child("reparto").getValue().toString()
+                    videoUrl=snapshotpeli2.child("videoUrl").getValue().toString()
+                    sinopsis=snapshotpeli2.child("sinopsis").getValue().toString()
+                    displayPeliculas.add(peli(imagen,titulo,categoria,subtitulo,clasificacion,duracion,director,reparto,videoUrl,sinopsis,comentarios))
+
+                    imagen= snapshotpeli3.child("imagen").getValue().toString()
+                    titulo= snapshotpeli3.child("titulo").getValue().toString()
+                    categoria= snapshotpeli3.child("categoria").getValue().toString()
+                    subtitulo= snapshotpeli3.child("subtitulo").getValue().toString()
+                    clasificacion=snapshotpeli3.child("clasificacion").getValue().toString()
+                    duracion=snapshotpeli3.child("duracion").getValue().toString()
+                    director=snapshotpeli3.child("director").getValue().toString()
+                    reparto=snapshotpeli3.child("reparto").getValue().toString()
+                    videoUrl=snapshotpeli3.child("videoUrl").getValue().toString()
+                    sinopsis=snapshotpeli3.child("sinopsis").getValue().toString()
+                    displayPeliculas.add(peli(imagen,titulo,categoria,subtitulo,clasificacion,duracion,director,reparto,videoUrl,sinopsis,comentarios))
+
+                    imagen= snapshotpeli4.child("imagen").getValue().toString()
+                    titulo= snapshotpeli4.child("titulo").getValue().toString()
+                    categoria= snapshotpeli4.child("categoria").getValue().toString()
+                    subtitulo= snapshotpeli4.child("subtitulo").getValue().toString()
+                    clasificacion=snapshotpeli4.child("clasificacion").getValue().toString()
+                    duracion=snapshotpeli4.child("duracion").getValue().toString()
+                    director=snapshotpeli4.child("director").getValue().toString()
+                    reparto=snapshotpeli4.child("reparto").getValue().toString()
+                    videoUrl=snapshotpeli4.child("videoUrl").getValue().toString()
+                    sinopsis=snapshotpeli4.child("sinopsis").getValue().toString()
+                    displayPeliculas.add(peli(imagen,titulo,categoria,subtitulo,clasificacion,duracion,director,reparto,videoUrl,sinopsis,comentarios))
+
+                    imagen= snapshotpeli5.child("imagen").getValue().toString()
+                    titulo= snapshotpeli5.child("titulo").getValue().toString()
+                    categoria= snapshotpeli5.child("categoria").getValue().toString()
+                    subtitulo= snapshotpeli5.child("subtitulo").getValue().toString()
+                    clasificacion=snapshotpeli5.child("clasificacion").getValue().toString()
+                    duracion=snapshotpeli5.child("duracion").getValue().toString()
+                    director=snapshotpeli5.child("director").getValue().toString()
+                    reparto=snapshotpeli5.child("reparto").getValue().toString()
+                    videoUrl=snapshotpeli5.child("videoUrl").getValue().toString()
+                    sinopsis=snapshotpeli5.child("sinopsis").getValue().toString()
+                    displayPeliculas.add(peli(imagen,titulo,categoria,subtitulo,clasificacion,duracion,director,reparto,videoUrl,sinopsis,comentarios))
+
+                    imagen= snapshotpeli6.child("imagen").getValue().toString()
+                    titulo= snapshotpeli6.child("titulo").getValue().toString()
+                    categoria= snapshotpeli6.child("categoria").getValue().toString()
+                    subtitulo= snapshotpeli6.child("subtitulo").getValue().toString()
+                    clasificacion=snapshotpeli6.child("clasificacion").getValue().toString()
+                    duracion=snapshotpeli6.child("duracion").getValue().toString()
+                    director=snapshotpeli6.child("director").getValue().toString()
+                    reparto=snapshotpeli6.child("reparto").getValue().toString()
+                    videoUrl=snapshotpeli6.child("videoUrl").getValue().toString()
+                    sinopsis=snapshotpeli6.child("sinopsis").getValue().toString()
+                    displayPeliculas.add(peli(imagen,titulo,categoria,subtitulo,clasificacion,duracion,director,reparto,videoUrl,sinopsis,comentarios))
+
+                    imagen= snapshotpeli7.child("imagen").getValue().toString()
+                    titulo= snapshotpeli7.child("titulo").getValue().toString()
+                    categoria= snapshotpeli7.child("categoria").getValue().toString()
+                    subtitulo= snapshotpeli7.child("subtitulo").getValue().toString()
+                    clasificacion=snapshotpeli7.child("clasificacion").getValue().toString()
+                    duracion=snapshotpeli7.child("duracion").getValue().toString()
+                    director=snapshotpeli7.child("director").getValue().toString()
+                    reparto=snapshotpeli7.child("reparto").getValue().toString()
+                    videoUrl=snapshotpeli7.child("videoUrl").getValue().toString()
+                    sinopsis=snapshotpeli7.child("sinopsis").getValue().toString()
+                    displayPeliculas.add(peli(imagen,titulo,categoria,subtitulo,clasificacion,duracion,director,reparto,videoUrl,sinopsis,comentarios))
+
+                    imagen= snapshotpeli8.child("imagen").getValue().toString()
+                    titulo= snapshotpeli8.child("titulo").getValue().toString()
+                    categoria= snapshotpeli8.child("categoria").getValue().toString()
+                    subtitulo= snapshotpeli8.child("subtitulo").getValue().toString()
+                    clasificacion=snapshotpeli8.child("clasificacion").getValue().toString()
+                    duracion=snapshotpeli8.child("duracion").getValue().toString()
+                    director=snapshotpeli8.child("director").getValue().toString()
+                    reparto=snapshotpeli8.child("reparto").getValue().toString()
+                    videoUrl=snapshotpeli8.child("videoUrl").getValue().toString()
+                    sinopsis=snapshotpeli8.child("sinopsis").getValue().toString()
+                    displayPeliculas.add(peli(imagen,titulo,categoria,subtitulo,clasificacion,duracion,director,reparto,videoUrl,sinopsis,comentarios))
+
+                    imagen= snapshotpeli9.child("imagen").getValue().toString()
+                    titulo= snapshotpeli9.child("titulo").getValue().toString()
+                    categoria= snapshotpeli9.child("categoria").getValue().toString()
+                    subtitulo= snapshotpeli9.child("subtitulo").getValue().toString()
+                    clasificacion=snapshotpeli9.child("clasificacion").getValue().toString()
+                    duracion=snapshotpeli9.child("duracion").getValue().toString()
+                    director=snapshotpeli9.child("director").getValue().toString()
+                    reparto=snapshotpeli9.child("reparto").getValue().toString()
+                    videoUrl=snapshotpeli9.child("videoUrl").getValue().toString()
+                    sinopsis=snapshotpeli9.child("sinopsis").getValue().toString()
+                    displayPeliculas.add(peli(imagen,titulo,categoria,subtitulo,clasificacion,duracion,director,reparto,videoUrl,sinopsis,comentarios))
+
+                    imagen= snapshotpeli10.child("imagen").getValue().toString()
+                    titulo= snapshotpeli10.child("titulo").getValue().toString()
+                    categoria= snapshotpeli10.child("categoria").getValue().toString()
+                    subtitulo= snapshotpeli10.child("subtitulo").getValue().toString()
+                    clasificacion=snapshotpeli10.child("clasificacion").getValue().toString()
+                    duracion=snapshotpeli10.child("duracion").getValue().toString()
+                    director=snapshotpeli10.child("director").getValue().toString()
+                    reparto=snapshotpeli10.child("reparto").getValue().toString()
+                    videoUrl=snapshotpeli10.child("videoUrl").getValue().toString()
+                    sinopsis=snapshotpeli10.child("sinopsis").getValue().toString()
+
+                    displayPeliculas.add(peli(imagen,titulo,categoria,subtitulo,clasificacion,duracion,director,reparto,videoUrl,sinopsis,comentarios))
+
+                    imagen= snapshotpeli11.child("imagen").getValue().toString()
+                    titulo= snapshotpeli11.child("titulo").getValue().toString()
+                    categoria= snapshotpeli11.child("categoria").getValue().toString()
+                    subtitulo= snapshotpeli11.child("subtitulo").getValue().toString()
+                    clasificacion=snapshotpeli11.child("clasificacion").getValue().toString()
+                    duracion=snapshotpeli11.child("duracion").getValue().toString()
+                    director=snapshotpeli11.child("director").getValue().toString()
+                    reparto=snapshotpeli11.child("reparto").getValue().toString()
+                    videoUrl=snapshotpeli11.child("videoUrl").getValue().toString()
+                    sinopsis=snapshotpeli11.child("sinopsis").getValue().toString()
 
                     displayPeliculas.add(peli(imagen,titulo,categoria,subtitulo,clasificacion,duracion,director,reparto,videoUrl,sinopsis,comentarios))
                     displayList.addAll(displayPeliculas)
-
-                    peliculasAdapter = ItemAdapter(this@CarteleraActivity, displayList)
-                    gridView_movies = findViewById(R.id.gridview)
-                    gridView_movies.adapter = peliculasAdapter
-
                 }
-
+                peliculasAdapter = ItemAdapter(this@CarteleraActivity, displayList)
+                gridView_movies = findViewById(R.id.gridview)
+                gridView_movies.adapter = peliculasAdapter
 
             }
 
