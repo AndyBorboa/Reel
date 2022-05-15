@@ -15,12 +15,12 @@ import android.widget.ListView
 import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import androidx.viewbinding.ViewBindings
+import com.google.firebase.database.FirebaseDatabase
 
 class CalificacionesFragment : Fragment() {
 
     private lateinit var ComentariosRecyclerview: RecyclerView
-
-
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View?{
@@ -35,7 +35,6 @@ class CalificacionesFragment : Fragment() {
             activity?.startActivity(intent)
         }
 
-
         //PromosRecyclerView
         ComentariosRecyclerview = view.findViewById(R.id.ComentariosRecyclerView)
         ComentariosRecyclerview.setHasFixedSize(true)
@@ -46,7 +45,4 @@ class CalificacionesFragment : Fragment() {
 
         return view
     }
-
-
-
 }

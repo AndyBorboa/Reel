@@ -43,7 +43,7 @@
                 android:layout_marginTop="30dp"/>
 
             <RatingBar
-                android:id="@+id/Rb_comentario"
+                android:id="@+id/rb_comentario"
                 android:layout_marginTop="20dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -61,6 +61,7 @@
                 android:gravity="center"/>
 
             <EditText
+                android:id="@+id/et_comentario"
                 android:layout_width="match_parent"
                 android:layout_height="122dp"
                 android:layout_gravity="center"
@@ -121,6 +122,7 @@
                 android:textColor="@color/white"/>
 
             <Button
+                android:id="@+id/calificar_btn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
