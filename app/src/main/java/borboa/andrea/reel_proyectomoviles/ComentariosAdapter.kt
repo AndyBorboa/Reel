@@ -34,7 +34,7 @@ class ComentariosAdapter(val comentariosList: List<comentario>) :
         holder.usuarioView.setText(comentariosList[position].nombreUsuario)
         holder.fechaView.setText(comentariosList[position].fecha)
         holder.comentarioView.setText(comentariosList[position].comentario)
-        holder.estrellasView.setRating(comentariosList[position].estrellas)
+        comentariosList[position].estrellas?.let { holder.estrellasView.setRating(it) }
     }
 
     override fun getItemCount(): Int {
