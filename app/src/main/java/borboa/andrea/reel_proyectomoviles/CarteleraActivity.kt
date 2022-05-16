@@ -185,7 +185,7 @@ class CarteleraActivity : AppCompatActivity() {
                                             val comentario : String=comentariosSnapshot.child("comentario").getValue().toString()
                                             val estrellas:Float =(comentariosSnapshot.child("estrellas").getValue().toString()).toFloat()
                                             val idPeli:String= comentariosSnapshot.child("idPeli").getValue().toString()
-                                            val coment:comentario=(comentario(nombreUsuario,fecha,comentario,estrellas))
+                                            val coment:comentario=(comentario(comentario, estrellas, fecha, idPeli, nombreUsuario))
                                             if(idPeli.equals("peli1")){
                                                 comentarios1.add(coment)
                                             }else if(idPeli.equals("peli2")){
