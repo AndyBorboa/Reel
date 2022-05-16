@@ -11,6 +11,7 @@ class ActivityComentario : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_comentario)
+        val usuario: String? = getIntent().getStringExtra("usuario")
 
         val ratingBar = findViewById<View>(R.id.Rb_comentario) as RatingBar
         val msj = findViewById<TextView>(R.id.mensaje) as TextView
@@ -29,8 +30,5 @@ class ActivityComentario : AppCompatActivity() {
                     msj.setText("¡Excelente!")
                 }
             }
-
-
-
     }
 }

@@ -26,44 +26,38 @@ class PerfilActivity : AppCompatActivity() {
         bottomNavigationView.setOnNavigationItemSelectedListener(BottomNavigationView.OnNavigationItemSelectedListener { menuItem ->
             when (menuItem.itemId) {
                 R.id.cartelera -> {
-                    startActivity(
-                        Intent(
-                            applicationContext, CarteleraActivity::class.java
-                        )
-                    )
+                    var intent = Intent(applicationContext, CarteleraActivity::class.java)
+                    intent.putExtra("usuario",usuario)
+                    startActivity(intent)
+
                     overridePendingTransition(0,0)
                     return@OnNavigationItemSelectedListener true
                 }
-                R.id.estrenos -> {
-                    startActivity(
-                        Intent(
-                            applicationContext, EstrenosActivity::class.java
-                        )
-                    )
+                R.id.inicio -> {
+                    var intent = Intent(applicationContext, InicioActivity::class.java)
+                    intent.putExtra("usuario",usuario)
+                    startActivity(intent)
+
                     overridePendingTransition(0,0)
                     return@OnNavigationItemSelectedListener true
                 }
                 R.id.cines -> {
-                    startActivity(
-                        Intent(
-                            applicationContext, cines::class.java
-                        )
-                    )
+                    var intent = Intent(applicationContext, cines::class.java)
+                    intent.putExtra("usuario",usuario)
+                    startActivity(intent)
+
                     overridePendingTransition(0,0)
                     return@OnNavigationItemSelectedListener true
                 }
+                R.id.estrenos -> {
+                    var intent = Intent(applicationContext, EstrenosActivity::class.java)
+                    intent.putExtra("usuario",usuario)
+                    startActivity(intent)
 
-                R.id.inicio ->{
-                    startActivity(
-                        Intent(
-                            applicationContext, InicioActivity::class.java
-                        )
-                    )
                     overridePendingTransition(0,0)
                     return@OnNavigationItemSelectedListener true
                 }
                 R.id.perfil -> return@OnNavigationItemSelectedListener true
-
             }
             false
         })

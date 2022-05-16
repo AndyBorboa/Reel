@@ -17,6 +17,7 @@ class DatosFragment : Fragment() {
 
         override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                                   savedInstanceState: Bundle?): View? {
+
                 // Inflate the layout for this fragment
 
                 val imagen = getArguments()?.getString("imagen")
@@ -30,6 +31,7 @@ class DatosFragment : Fragment() {
                 val sinopsis = getArguments()?.getString("sinopsis")
                 val categoria = getArguments()?.getString("categoria")
                 val promedio = getArguments()?.getFloat("promedio")
+                val usuario = getArguments()?.getString("usuario")
 
 
                 val view: View = inflater.inflate(R.layout.fragment_datos, container, false)

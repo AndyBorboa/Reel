@@ -24,7 +24,7 @@ class CalificacionesFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View?{
-
+        val usuario = getArguments()?.getString("usuario")
         val comentarios = getArguments()?.getSerializable("comentarios") as ArrayList<comentario>
 
         val view = inflater.inflate(R.layout.fragment_calificaciones, container, false)
@@ -32,6 +32,9 @@ class CalificacionesFragment : Fragment() {
 
         btn_comentario.setOnClickListener {
             val intent = Intent(activity, ActivityComentario::class.java)
+            val bundle = Bundle()
+            bundle.putString("imagen", usuario)
+            intent.putExtras(bundle);
             activity?.startActivity(intent)
         }
 
