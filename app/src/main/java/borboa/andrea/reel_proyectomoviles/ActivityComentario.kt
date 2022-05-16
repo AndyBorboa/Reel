@@ -7,21 +7,20 @@ import android.os.Bundle
 import android.view.View
 import android.widget.*
 import androidx.annotation.RequiresApi
+import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
+import java.time.format.DateTimeFormatter
 
 class ActivityComentario : AppCompatActivity() {
-    private val comentariosRef=FirebaseDatabase.getInstance().getReference("comentarios")
-    private val comentarioRef=FirebaseDatabase.getInstance().getReference("comentario")
-    private val estrellasRef= FirebaseDatabase.getInstance().getReference("estrellas")
-    private val fechaRef=FirebaseDatabase.getInstance().getReference("fecha")
-    private val userRef = FirebaseDatabase.getInstance().getReference("Users")
+    private val userRef = FirebaseDatabase.getInstance().getReference("comentarios")
+    private val idPeli = FirebaseDatabase.getInstance().getReference("idPeli")
 
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_comentario)
 
-        var btnSave: Button =findViewById(R.id.btn_comentario) as Button
+        var btnSave: Button =findViewById(R.id.calificar_btn) as Button
         btnSave.setOnClickListener { saveComentariFrom() }
 
         val ratingBar = findViewById<View>(R.id.rb_comentario) as RatingBar
@@ -46,14 +45,19 @@ class ActivityComentario : AppCompatActivity() {
     private fun saveComentariFrom() {
         var comentario: EditText = findViewById(R.id.et_comentario) as EditText
         var estrellas: RatingBar = findViewById(R.id.rb_comentario) as RatingBar
+        var nombreUsuario: DatabaseReference = userRef.child("usuario")
 
-        val fecha=LocalDateTime.now().toString()
+        val fecha=LocalDateTime.now()
+        val formatter =DateTimeFormatter.ofPattern("dd/MM/yy")
+        val formated = fecha.format(formatter)
 
-        val usuario = comentario(userRef.database.getReference().toString(),
-            fecha,
+        val usuario = comentario(nombreUsuario.toString(),
+            formated.toString(),
             comentario.text.toString(),
             estrellas.numStars.toFloat(),
+            idPeli.key.toString()
         )
         userRef.push().setValue(usuario)
+        print(fecha)
     }
 }

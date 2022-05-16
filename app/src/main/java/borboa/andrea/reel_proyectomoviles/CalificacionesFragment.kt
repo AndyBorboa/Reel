@@ -16,11 +16,13 @@ import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewbinding.ViewBindings
-import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.*
 
 class CalificacionesFragment : Fragment() {
 
     private lateinit var ComentariosRecyclerview: RecyclerView
+    private lateinit var bdref: DatabaseReference
+    private lateinit var comentariosArrayList: ArrayList<comentario>
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View?{
@@ -42,7 +44,31 @@ class CalificacionesFragment : Fragment() {
 
         val comentariosAdapter = ComentariosAdapter(comentarios)
         ComentariosRecyclerview.setAdapter(comentariosAdapter)
+        comentariosArrayList= arrayListOf<comentario>()
+        getComentarioData()
 
         return view
     }
+
+    private fun getComentarioData(){
+        bdref= FirebaseDatabase.getInstance().getReference("comentarios")
+        bdref.addValueEventListener(object : ValueEventListener {
+
+            override fun onDataChange(snapshot: DataSnapshot) {
+                if(snapshot.exists()){
+                    for(comentarioSnapshot in snapshot.children){
+                        val estreno = comentarioSnapshot.getValue(comentario::class.java)
+                        comentariosArrayList.add(estreno!!)
+                    }
+                    ComentariosRecyclerview.adapter=ComentariosAdapter(comentariosArrayList)
+                }
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                TODO("Not yet implemented")
+            }
+
+        })
+    }
+
 }
