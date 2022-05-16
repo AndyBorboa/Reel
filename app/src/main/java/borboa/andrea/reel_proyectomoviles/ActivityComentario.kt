@@ -1,29 +1,19 @@
 package borboa.andrea.reel_proyectomoviles
 
-import java.time.LocalDateTime
-import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.widget.*
-import androidx.annotation.RequiresApi
-import com.google.firebase.database.DatabaseReference
-import com.google.firebase.database.FirebaseDatabase
-import java.time.format.DateTimeFormatter
+import android.widget.RatingBar
+import android.widget.TextView
+import android.widget.Toast
 
 class ActivityComentario : AppCompatActivity() {
-    private val userRef = FirebaseDatabase.getInstance().getReference("comentarios")
-    private val idPeli = FirebaseDatabase.getInstance().getReference("idPeli")
-
-    @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_comentario)
+        val usuario: String? = getIntent().getStringExtra("usuario")
 
-        var btnSave: Button =findViewById(R.id.calificar_btn) as Button
-        btnSave.setOnClickListener { saveComentariFrom() }
-
-        val ratingBar = findViewById<View>(R.id.rb_comentario) as RatingBar
+        val ratingBar = findViewById<View>(R.id.Rb_comentario) as RatingBar
         val msj = findViewById<TextView>(R.id.mensaje) as TextView
         ratingBar.onRatingBarChangeListener =
             RatingBar.OnRatingBarChangeListener { ratingBar, v, b ->
@@ -40,24 +30,5 @@ class ActivityComentario : AppCompatActivity() {
                     msj.setText("¡Excelente!")
                 }
             }
-    }
-    @RequiresApi(Build.VERSION_CODES.O)
-    private fun saveComentariFrom() {
-        var comentario: EditText = findViewById(R.id.et_comentario) as EditText
-        var estrellas: RatingBar = findViewById(R.id.rb_comentario) as RatingBar
-        var nombreUsuario: DatabaseReference = userRef.child("usuario")
-
-        val fecha=LocalDateTime.now()
-        val formatter =DateTimeFormatter.ofPattern("dd/MM/yy")
-        val formated = fecha.format(formatter)
-
-        val usuario = comentario(nombreUsuario.toString(),
-            formated.toString(),
-            comentario.text.toString(),
-            estrellas.numStars.toFloat(),
-            idPeli.key.toString()
-        )
-        userRef.push().setValue(usuario)
-        print(fecha)
     }
 }

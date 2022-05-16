@@ -13,6 +13,7 @@ class PeliculasActivity : AppCompatActivity() {
 
         val DatosFragment = DatosFragment()
         val CalificacionesFragment = CalificacionesFragment()
+        val HorariosFragment = HorariosFragment()
 
         val bundle = intent.extras
 
@@ -27,6 +28,8 @@ class PeliculasActivity : AppCompatActivity() {
             var videoUrl = bundle.getString("videoUrl")
             var sinopsis = bundle.getString("sinopsis")
             var categoria = bundle.getString("categoria")
+            var promedio = bundle.getFloat("promedio")
+            var usuario = bundle.getString("usuario")
 
             val comentario = bundle.getSerializable("comentarios") as ArrayList<comentario>
 
@@ -44,14 +47,21 @@ class PeliculasActivity : AppCompatActivity() {
             args.putString("videoUrl",videoUrl)
             args.putString("sinopsis",sinopsis)
             args.putString("categoria",categoria)
+            args.putFloat("promedio",promedio)
+            args.putString("usuario",usuario)
 
             val argsComentario = Bundle()
+
             argsComentario.putSerializable("comentarios",comentario)
+            argsComentario.putString("usuario",usuario)
+
+            val argsHorarios = Bundle()
+            argsHorarios.putString("usuario",usuario)
 
 
             DatosFragment.setArguments(args)
             CalificacionesFragment.setArguments(argsComentario)
-
+            HorariosFragment.setArguments(argsHorarios)
 
         }
 
@@ -60,7 +70,7 @@ class PeliculasActivity : AppCompatActivity() {
 
         val fragmentAdapter = FragmentAdapter(supportFragmentManager)
         fragmentAdapter.addFragment(DatosFragment,"Datos")
-        fragmentAdapter.addFragment(HorariosFragment(),"Horarios")
+        fragmentAdapter.addFragment(HorariosFragment,"Horarios")
         fragmentAdapter.addFragment(CalificacionesFragment,"Calificaciones")
 
 

@@ -19,45 +19,41 @@ class cines : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_cines)
+        val usuario: String? = getIntent().getStringExtra("usuario")
 
         val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottom_navigation)
         bottomNavigationView.selectedItemId = R.id.cines
         bottomNavigationView.setOnNavigationItemSelectedListener(BottomNavigationView.OnNavigationItemSelectedListener { menuItem ->
             when (menuItem.itemId) {
                 R.id.cartelera -> {
-                    startActivity(
-                        Intent(
-                            applicationContext, CarteleraActivity::class.java
-                        )
-                    )
+                    var intent = Intent(applicationContext, CarteleraActivity::class.java)
+                    intent.putExtra("usuario",usuario)
+                    startActivity(intent)
+
+                    overridePendingTransition(0,0)
+                    return@OnNavigationItemSelectedListener true
+                }
+                R.id.inicio -> {
+                    var intent = Intent(applicationContext, InicioActivity::class.java)
+                    intent.putExtra("usuario",usuario)
+                    startActivity(intent)
+
                     overridePendingTransition(0,0)
                     return@OnNavigationItemSelectedListener true
                 }
                 R.id.estrenos -> {
-                    startActivity(
-                        Intent(
-                            applicationContext, EstrenosActivity::class.java
-                        )
-                    )
-                    overridePendingTransition(0,0)
-                    return@OnNavigationItemSelectedListener true
-                }
+                    var intent = Intent(applicationContext, borboa.andrea.reel_proyectomoviles.EstrenosActivity::class.java)
+                    intent.putExtra("usuario",usuario)
+                    startActivity(intent)
 
-                R.id.perfil -> {
-                    startActivity(
-                        Intent(
-                            applicationContext, PerfilActivity::class.java
-                        )
-                    )
                     overridePendingTransition(0,0)
                     return@OnNavigationItemSelectedListener true
                 }
-                R.id.inicio ->{
-                    startActivity(
-                        Intent(
-                            applicationContext, borboa.andrea.reel_proyectomoviles.InicioActivity::class.java
-                        )
-                    )
+                R.id.perfil -> {
+                    var intent = Intent(applicationContext, PerfilActivity::class.java)
+                    intent.putExtra("usuario",usuario)
+                    startActivity(intent)
+
                     overridePendingTransition(0,0)
                     return@OnNavigationItemSelectedListener true
                 }

@@ -39,52 +39,50 @@ class CarteleraActivity : AppCompatActivity() {
     val comentarios11 = ArrayList<comentario>()
     val comentarios12 = ArrayList<comentario>()
 
+
     private lateinit var bdref:DatabaseReference
     private lateinit var bdref1:DatabaseReference
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_cartelera)
+        val usuario: String? = getIntent().getStringExtra("usuario")
+
 
         val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottom_navigation)
         bottomNavigationView.selectedItemId = R.id.cartelera
         bottomNavigationView.setOnNavigationItemSelectedListener(BottomNavigationView.OnNavigationItemSelectedListener { menuItem ->
             when (menuItem.itemId) {
+                R.id.inicio -> {
+                    var intent = Intent(applicationContext, CarteleraActivity::class.java)
+                    intent.putExtra("usuario",usuario)
+                    startActivity(intent)
 
+                    overridePendingTransition(0,0)
+                    return@OnNavigationItemSelectedListener true
+                }
                 R.id.estrenos -> {
-                    startActivity(
-                        Intent(
-                            applicationContext, EstrenosActivity::class.java
-                        )
-                    )
-                    overridePendingTransition(0, 0)
+                    var intent = Intent(applicationContext, EstrenosActivity::class.java)
+                    intent.putExtra("usuario",usuario)
+                    startActivity(intent)
+
+                    overridePendingTransition(0,0)
                     return@OnNavigationItemSelectedListener true
                 }
                 R.id.cines -> {
-                    startActivity(
-                        Intent(
-                            applicationContext, cines::class.java
-                        )
-                    )
-                    overridePendingTransition(0, 0)
+                    var intent = Intent(applicationContext, cines::class.java)
+                    intent.putExtra("usuario",usuario)
+                    startActivity(intent)
+
+                    overridePendingTransition(0,0)
                     return@OnNavigationItemSelectedListener true
                 }
                 R.id.perfil -> {
-                    startActivity(
-                        Intent(
-                            applicationContext, PerfilActivity::class.java
-                        )
-                    )
-                    overridePendingTransition(0, 0)
-                    return@OnNavigationItemSelectedListener true
-                }
-                R.id.inicio -> {
-                    startActivity(
-                        Intent(
-                            applicationContext, InicioActivity::class.java
-                        )
-                    )
-                    overridePendingTransition(0, 0)
+                    var intent = Intent(applicationContext, PerfilActivity::class.java)
+                    intent.putExtra("usuario",usuario)
+                    startActivity(intent)
+
+                    overridePendingTransition(0,0)
                     return@OnNavigationItemSelectedListener true
                 }
                 R.id.cartelera -> return@OnNavigationItemSelectedListener true
@@ -92,7 +90,9 @@ class CarteleraActivity : AppCompatActivity() {
             false
         })
 
-        datos()
+        if (usuario != null) {
+            Cargardatos(usuario)
+        }
 
 
         val toolbar: androidx.appcompat.widget.Toolbar = findViewById(R.id.toolbar)
@@ -131,7 +131,6 @@ class CarteleraActivity : AppCompatActivity() {
                                     ?.contains(serch) == true
                             ) {
                                 displayList.add(it)
-                                //peliculasAdapter = ItemAdapter(this@CarteleraActivity,peliculas)
                                 peliculasAdapter!!.notifyDataSetChanged()
 
                             }
@@ -139,7 +138,6 @@ class CarteleraActivity : AppCompatActivity() {
                     } else {
                         displayList.clear()
                         displayList.addAll(displayPeliculas)
-                        //peliculasAdapter = ItemAdapter(this@CarteleraActivity,peliculas)
                         peliculasAdapter!!.notifyDataSetChanged()
 
                     }
@@ -148,9 +146,6 @@ class CarteleraActivity : AppCompatActivity() {
 
             })
         }
-
-
-
         return super.onCreateOptionsMenu(menu)
     }
 
@@ -159,11 +154,10 @@ class CarteleraActivity : AppCompatActivity() {
         return super.onOptionsItemSelected(item)
     }
 
-
-    fun datos() {
+    fun Cargardatos(user:String) {
         bdref= FirebaseDatabase.getInstance().getReference("peliculas1")
         bdref1=FirebaseDatabase.getInstance().getReference("comentarios")
-        bdref.addListenerForSingleValueEvent(object : ValueEventListener {
+        bdref.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
                 if (dataSnapshot.exists()) {
                     for (datosSnapshot in dataSnapshot.children){
@@ -181,7 +175,7 @@ class CarteleraActivity : AppCompatActivity() {
                         if(datosList.contains(datosPeli) == false) {
                             datosList.add(datosPeli)
                         }
-                        bdref1.addListenerForSingleValueEvent(object : ValueEventListener {
+                        bdref1.addValueEventListener(object : ValueEventListener {
                             override fun onDataChange(snapshot: DataSnapshot) {
                                 if (snapshot.exists()) {
                                     for (comentariosSnapshot in snapshot.children) {
@@ -264,7 +258,7 @@ class CarteleraActivity : AppCompatActivity() {
                         }
                     }
                     displayList.addAll(displayPeliculas)
-                    peliculasAdapter = ItemAdapter(this@CarteleraActivity, displayList)
+                    peliculasAdapter = ItemAdapter(this@CarteleraActivity, displayList,user)
                     gridView_movies = findViewById(R.id.gridview)
                     gridView_movies.adapter = peliculasAdapter
 
@@ -279,10 +273,12 @@ class CarteleraActivity : AppCompatActivity() {
     class ItemAdapter : BaseAdapter {
         var peliculas = ArrayList<peli>()
         var contexto: Context? = null
+        var usuario:String
 
-        constructor(contexto: Context, peliculas: ArrayList<peli>) {
+        constructor(contexto: Context, peliculas: ArrayList<peli>, usuario:String) {
             this.contexto = contexto
             this.peliculas = peliculas
+            this.usuario = usuario
         }
 
         override fun getCount(): Int {
@@ -299,19 +295,24 @@ class CarteleraActivity : AppCompatActivity() {
 
         override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
             var pelicula = peliculas[position]
-            var inflator =
-                contexto!!.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
+            var inflator = contexto!!.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
             var vista = inflator.inflate(R.layout.cartelera_item, null)
+            var user = usuario
 
             var image: ImageView = vista.findViewById(R.id.imagen_peliculacartelera) as ImageView
             var title: TextView = vista.findViewById(R.id.titulo_peliculacartelera) as TextView
-            var categoria: TextView =
-                vista.findViewById(R.id.categoria_peliculacartelera) as TextView
+            var categoria: TextView = vista.findViewById(R.id.categoria_peliculacartelera) as TextView
             var estrellas: RatingBar = vista.findViewById(R.id.ratingBar) as RatingBar
+            var ratinMedia = pelicula.comentarios?.map {
+                it.estrellas.toString().toDouble()
+            }?.average().toString().toFloat()
 
             Glide.with(contexto!!).load(pelicula.imagen).into(image);
             title.setText(pelicula.titulo)
             categoria.setText(pelicula.categoria)
+            if (ratinMedia != null) {
+                estrellas.rating = ratinMedia
+            }
 
 
 
@@ -329,9 +330,9 @@ class CarteleraActivity : AppCompatActivity() {
                 bundle.putString("reparto", pelicula.reparto)
                 bundle.putString("videoUrl", pelicula.videoUrl)
                 bundle.putString("sinopsis", pelicula.sinopsis)
-
                 bundle.putSerializable("comentarios", pelicula.comentarios)
-
+                bundle.putFloat("promedio",ratinMedia)
+                bundle.putString("usuario",user)
 
                 intent.putExtras(bundle);
                 contexto!!.startActivity(intent)
@@ -343,4 +344,6 @@ class CarteleraActivity : AppCompatActivity() {
 
     }
 }
+
+
 
