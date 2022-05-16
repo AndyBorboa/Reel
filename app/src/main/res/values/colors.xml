@@ -13,4 +13,7 @@
     <color name="gris">#4a4a4a</color>
     <color name="gris2">#404040</color>
     <color name="grisblack">#282828</color>
+    <color name="grisblack1">#474747</color>
+    <color name="grishorario">#4d4d4d</color>
+    <color name="bordehorario">#767676</color>
 </resources>

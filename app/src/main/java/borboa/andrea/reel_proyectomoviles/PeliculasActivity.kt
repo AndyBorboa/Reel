@@ -27,6 +27,7 @@ class PeliculasActivity : AppCompatActivity() {
             var videoUrl = bundle.getString("videoUrl")
             var sinopsis = bundle.getString("sinopsis")
             var categoria = bundle.getString("categoria")
+            var promedio = bundle.getFloat("promedio")
 
             val comentario = bundle.getSerializable("comentarios") as ArrayList<comentario>
 
@@ -44,6 +45,7 @@ class PeliculasActivity : AppCompatActivity() {
             args.putString("videoUrl",videoUrl)
             args.putString("sinopsis",sinopsis)
             args.putString("categoria",categoria)
+            args.putFloat("promedio",promedio)
 
             val argsComentario = Bundle()
             argsComentario.putSerializable("comentarios",comentario)

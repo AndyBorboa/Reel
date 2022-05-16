@@ -269,6 +269,7 @@ class CarteleraActivity : AppCompatActivity() {
                     peliculasAdapter = ItemAdapter(this@CarteleraActivity, displayList)
                     gridView_movies = findViewById(R.id.gridview)
                     gridView_movies.adapter = peliculasAdapter
+                    peliculasAdapter!!.notifyDataSetChanged()
 
                 }
             }
@@ -300,6 +301,7 @@ class CarteleraActivity : AppCompatActivity() {
         }
 
         override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
+
             var pelicula = peliculas[position]
             var inflator =
                 contexto!!.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
@@ -310,10 +312,16 @@ class CarteleraActivity : AppCompatActivity() {
             var categoria: TextView =
                 vista.findViewById(R.id.categoria_peliculacartelera) as TextView
             var estrellas: RatingBar = vista.findViewById(R.id.ratingBar) as RatingBar
+            var ratinMedia = pelicula.comentarios?.map {
+                it.estrellas.toString().toDouble()
+            }?.average().toString().toFloat()
 
             Glide.with(contexto!!).load(pelicula.imagen).into(image);
             title.setText(pelicula.titulo)
             categoria.setText(pelicula.categoria)
+            if (ratinMedia != null) {
+                estrellas.rating = ratinMedia
+            }
 
 
 
@@ -333,6 +341,7 @@ class CarteleraActivity : AppCompatActivity() {
                 bundle.putString("sinopsis", pelicula.sinopsis)
 
                 bundle.putSerializable("comentarios", pelicula.comentarios)
+                bundle.putFloat("promedio",ratinMedia)
 
 
                 intent.putExtras(bundle);
@@ -345,4 +354,6 @@ class CarteleraActivity : AppCompatActivity() {
 
     }
 }
+
+
 

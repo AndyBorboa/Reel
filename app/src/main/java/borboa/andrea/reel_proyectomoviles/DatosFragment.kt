@@ -1,5 +1,6 @@
 package borboa.andrea.reel_proyectomoviles
 
+import android.media.Rating
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -8,13 +9,14 @@ import android.view.ViewGroup
 import android.webkit.WebChromeClient
 import android.webkit.WebView
 import android.widget.ImageView
+import android.widget.RatingBar
 import android.widget.TextView
 import com.bumptech.glide.Glide
 
 class DatosFragment : Fragment() {
 
         override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-                                  savedInstanceState: Bundle?): View?{
+                                  savedInstanceState: Bundle?): View? {
                 // Inflate the layout for this fragment
 
                 val imagen = getArguments()?.getString("imagen")
@@ -27,6 +29,7 @@ class DatosFragment : Fragment() {
                 val videoUrl = getArguments()?.getString("videoUrl")
                 val sinopsis = getArguments()?.getString("sinopsis")
                 val categoria = getArguments()?.getString("categoria")
+                val promedio = getArguments()?.getFloat("promedio")
 
 
                 val view: View = inflater.inflate(R.layout.fragment_datos, container, false)
@@ -46,6 +49,7 @@ class DatosFragment : Fragment() {
                 var sinopsisView: TextView = view.findViewById(R.id.sinopsisView)
                 var categoriaView: TextView = view.findViewById(R.id.categoriaView)
                 var subtituloView: TextView = view.findViewById(R.id.subtituloView)
+                var promedioView: RatingBar = view.findViewById(R.id.ratingBar) as RatingBar
 
 
                 Glide.with(this).load(imagen).into(imagenView);
@@ -57,6 +61,9 @@ class DatosFragment : Fragment() {
                 sinopsisView.setText(sinopsis)
                 categoriaView.setText(categoria)
                 subtituloView.setText(subtitulo)
+                if (promedio != null) {
+                        promedioView.rating = promedio
+                }
 
                 return view
         }

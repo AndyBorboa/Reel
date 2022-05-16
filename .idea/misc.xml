@@ -66,12 +66,18 @@
         <entry key="..\:/Aplicaciones Moviles/Reel_ProyectoMoviles/app/src/main/res/menu/menu_navigatio.xml" value="0.20364583333333333" />
         <entry key="..\:/Aplicaciones Moviles/Reel_ProyectoMoviles/app/src/main/res/menu/options_menu.xml" value="0.19947916666666668" />
         <entry key="..\:/Aplicaciones Moviles/Reel_ProyectoMoviles/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.136" />
+        <entry key="..\:/Users/andre/OneDrive/Documentos/GitHub/ProyectoReparado/app/src/main/res/drawable/backgroundtab.xml" value="0.1215" />
+        <entry key="..\:/Users/andre/OneDrive/Documentos/GitHub/ProyectoReparado/app/src/main/res/drawable/bgtabs.xml" value="0.1215" />
+        <entry key="..\:/Users/andre/OneDrive/Documentos/GitHub/ProyectoReparado/app/src/main/res/drawable/borde.xml" value="0.1415" />
         <entry key="..\:/Users/andre/OneDrive/Documentos/GitHub/ProyectoReparado/app/src/main/res/drawable/bordedos.xml" value="0.155" />
+        <entry key="..\:/Users/andre/OneDrive/Documentos/GitHub/ProyectoReparado/app/src/main/res/drawable/bordehorario.xml" value="0.5" />
+        <entry key="..\:/Users/andre/OneDrive/Documentos/GitHub/ProyectoReparado/app/src/main/res/drawable/bordestrella.xml" value="0.12" />
+        <entry key="..\:/Users/andre/OneDrive/Documentos/GitHub/ProyectoReparado/app/src/main/res/drawable/ratingbar.xml" value="0.1315" />
         <entry key="..\:/Users/andre/OneDrive/Documentos/GitHub/ProyectoReparado/app/src/main/res/drawable/round_button.xml" value="0.142" />
         <entry key="..\:/Users/andre/OneDrive/Documentos/GitHub/ProyectoReparado/app/src/main/res/drawable/searchviewbackground.xml" value="0.142" />
         <entry key="..\:/Users/andre/OneDrive/Documentos/GitHub/ProyectoReparado/app/src/main/res/layout/activity_cartelera.xml" value="0.22" />
         <entry key="..\:/Users/andre/OneDrive/Documentos/GitHub/ProyectoReparado/app/src/main/res/layout/activity_cines.xml" value="0.16" />
-        <entry key="..\:/Users/andre/OneDrive/Documentos/GitHub/ProyectoReparado/app/src/main/res/layout/activity_comentario.xml" value="0.21145833333333333" />
+        <entry key="..\:/Users/andre/OneDrive/Documentos/GitHub/ProyectoReparado/app/src/main/res/layout/activity_comentario.xml" value="0.25" />
         <entry key="..\:/Users/andre/OneDrive/Documentos/GitHub/ProyectoReparado/app/src/main/res/layout/activity_estrenos.xml" value="0.12552083333333333" />
         <entry key="..\:/Users/andre/OneDrive/Documentos/GitHub/ProyectoReparado/app/src/main/res/layout/activity_filtro.xml" value="0.21145833333333333" />
         <entry key="..\:/Users/andre/OneDrive/Documentos/GitHub/ProyectoReparado/app/src/main/res/layout/activity_iniciar_sesion.xml" value="0.25" />
@@ -79,12 +85,16 @@
         <entry key="..\:/Users/andre/OneDrive/Documentos/GitHub/ProyectoReparado/app/src/main/res/layout/activity_peliculas.xml" value="0.15" />
         <entry key="..\:/Users/andre/OneDrive/Documentos/GitHub/ProyectoReparado/app/src/main/res/layout/activity_perfil.xml" value="0.2" />
         <entry key="..\:/Users/andre/OneDrive/Documentos/GitHub/ProyectoReparado/app/src/main/res/layout/activity_registrarse.xml" value="0.184375" />
-        <entry key="..\:/Users/andre/OneDrive/Documentos/GitHub/ProyectoReparado/app/src/main/res/layout/cartelera_item.xml" value="0.33" />
+        <entry key="..\:/Users/andre/OneDrive/Documentos/GitHub/ProyectoReparado/app/src/main/res/layout/cartelera_item.xml" value="0.5" />
+        <entry key="..\:/Users/andre/OneDrive/Documentos/GitHub/ProyectoReparado/app/src/main/res/layout/cell_horarios.xml" value="0.2" />
         <entry key="..\:/Users/andre/OneDrive/Documentos/GitHub/ProyectoReparado/app/src/main/res/layout/estrenos_item.xml" value="0.25" />
         <entry key="..\:/Users/andre/OneDrive/Documentos/GitHub/ProyectoReparado/app/src/main/res/layout/fragment_calificaciones.xml" value="0.22" />
-        <entry key="..\:/Users/andre/OneDrive/Documentos/GitHub/ProyectoReparado/app/src/main/res/layout/fragment_datos.xml" value="0.2109375" />
+        <entry key="..\:/Users/andre/OneDrive/Documentos/GitHub/ProyectoReparado/app/src/main/res/layout/fragment_datos.xml" value="0.33" />
+        <entry key="..\:/Users/andre/OneDrive/Documentos/GitHub/ProyectoReparado/app/src/main/res/layout/fragment_horarios.xml" value="0.25" />
+        <entry key="..\:/Users/andre/OneDrive/Documentos/GitHub/ProyectoReparado/app/src/main/res/layout/item_cines.xml" value="0.2" />
         <entry key="..\:/Users/andre/OneDrive/Documentos/GitHub/ProyectoReparado/app/src/main/res/layout/item_comentario.xml" value="0.33" />
         <entry key="..\:/Users/andre/OneDrive/Documentos/GitHub/ProyectoReparado/app/src/main/res/layout/item_horarios.xml" value="0.33" />
+        <entry key="..\:/Users/andre/OneDrive/Documentos/GitHub/ProyectoReparado/app/src/main/res/layout/perfil_item.xml" value="0.25" />
         <entry key="..\:/Users/andre/OneDrive/Documentos/GitHub/ProyectoReparado/app/src/main/res/layout/promos_item.xml" value="0.25" />
         <entry key="..\:/Users/andre/OneDrive/Documentos/GitHub/ProyectoReparado/app/src/main/res/layout/slider_item.xml" value="0.2" />
         <entry key="..\:/Users/andre/OneDrive/Documentos/GitHub/ProyectoReparado/app/src/main/res/menu/toolbar.xml" value="0.18" />

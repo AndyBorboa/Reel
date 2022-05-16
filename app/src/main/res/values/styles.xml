@@ -3,4 +3,11 @@
     <style name="ToolbarTheme">
         <item name="android:textColorHint">@color/white</item>
     </style>
+
+    <style name="RatingBar.Yellow" parent="Theme.AppCompat">
+        <item name="colorControlNormal">@color/grisblack1</item>
+        <item name="colorControlActivated">@color/yellow</item>
+    </style>
+
+
 </resources>

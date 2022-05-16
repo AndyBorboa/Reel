@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:background="@color/grisblack">
 
@@ -43,7 +44,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="5dp"
+            android:layout_marginLeft="5dp"
             android:orientation="vertical">
 
             <TextView
@@ -54,8 +55,9 @@
                 android:background="@color/white"
                 android:fontFamily="@font/littera_regular"
                 android:text="Acción"
+                android:padding="2dp"
                 android:textColor="@color/black"
-                android:textSize="10dp"
+                android:textSize="8dp"
                 android:textStyle="bold" />
 
 
@@ -68,12 +70,13 @@
 
             <RatingBar
                 android:id="@+id/ratingBar"
+                android:stepSize="1"
                 style="?android:attr/ratingBarStyleSmall"
+                android:theme="@style/RatingBar.Yellow"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
-                android:numStars="5"
-                android:rating="3.5"/>
+                android:numStars="5" />
 
         </LinearLayout>
 

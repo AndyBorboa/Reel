@@ -205,18 +205,22 @@
                             android:textSize="10dp" />
 
                         <LinearLayout
-                            android:layout_width="wrap_content"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_marginLeft="26dp"
+                            android:layout_marginRight="15dp"
                             android:orientation="vertical">
 
                             <TextView
                                 android:id="@+id/repartoView"
-                                android:layout_width="wrap_content"
+                                android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_marginLeft="26dp"
+                                android:layout_gravity="right"
+
                                 android:fontFamily="@font/littera_regular"
                                 android:text="Adam Wingward"
                                 android:textColor="@color/white"
+                                android:textColorLink="#FFFFFF"
                                 android:textSize="10dp" />
 
 
@@ -239,11 +243,12 @@
                 android:textStyle="bold" />
 
             <RatingBar
+                android:id="@+id/ratingBar"
                 style="?android:attr/ratingBarStyleIndicator"
+                android:theme="@style/RatingBar.Yellow"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:rating="4.5" />
+                android:layout_gravity="center" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -256,9 +261,11 @@
 
             <WebView
                 android:id="@+id/videoView"
-                android:layout_width="303dp"
+                android:layout_width="match_parent"
                 android:layout_height="162dp"
                 android:layout_gravity="center"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
                 android:layout_marginTop="5dp"></WebView>
 
             <TextView
@@ -278,8 +285,10 @@
                 android:text="Godzilla y Kong, dos de las fuerzas más poderosas de un planeta habitado por aterradoras criaturas, se enfrentan en un espectacular combate que sacude los cimientos de la humanidad. Monarch se embarca en una misión de alto riesgo y pone rumbo hacia territorios inexplorados para descubrir los orígenes de estos dos titanes, en un último esfuerzo por tratar de salvar a dos bestias que parecen tener las horas contadas sobre la faz de la Tierra."
                 android:textColor="@color/white"
                 android:textStyle="normal"
-                android:padding="5dp"
+                android:paddingTop="5dp"
+                android:layout_marginRight="20dp"
                 android:textSize="10dp"
+                android:gravity="start"
                 android:layout_marginLeft="20dp"
                 android:fontFamily="@font/littera_regular"/>
 

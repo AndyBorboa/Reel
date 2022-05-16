@@ -46,6 +46,7 @@
                     app:tabSelectedTextColor="@color/white"
                     app:tabTextAppearance="@style/TabLayoutTextStyle"
                     app:tabTextColor="@color/white"
+                    app:tabIndicatorFullWidth="true"
                     app:tabBackground="@drawable/backgroundtab" />
             </LinearLayout>
 

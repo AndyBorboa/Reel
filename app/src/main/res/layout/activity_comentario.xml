@@ -44,16 +44,19 @@
 
             <RatingBar
                 android:id="@+id/Rb_comentario"
+                android:theme="@style/RatingBar.Yellow"
                 android:layout_marginTop="20dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:rating="0" />
+                android:rating="0"
+                android:numStars="5"
+                android:stepSize="1"/>
             <TextView
                 android:id="@+id/mensaje"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="¡Mala!"
+                android:text=""
                 android:layout_marginTop="15dp"
                 android:textColor="@color/white"
                 android:fontFamily="@font/littera_regular"
@@ -63,16 +66,16 @@
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="122dp"
-                android:layout_gravity="center"
+                android:gravity="start"
                 android:layout_marginTop="20dp"
                 android:background="@drawable/round_buttontres"
                 android:fontFamily="@font/littera_regular"
                 android:hint="Escribir comentario..."
-                android:paddingLeft="20dp"
+                android:padding="20dp"
                 android:textAllCaps="false"
                 android:textColor="@color/white"
                 android:textColorHint="@color/white"
-                android:textSize="10dp" />
+                android:textSize="12dp" />
 
 
 
