@@ -30,6 +30,7 @@ class PeliculasActivity : AppCompatActivity() {
             var categoria = bundle.getString("categoria")
             var promedio = bundle.getFloat("promedio")
             var usuario = bundle.getString("usuario")
+            var idPeli = bundle.getString("idPeli")
 
             val comentario = bundle.getSerializable("comentarios") as ArrayList<comentario>
 
@@ -49,11 +50,13 @@ class PeliculasActivity : AppCompatActivity() {
             args.putString("categoria",categoria)
             args.putFloat("promedio",promedio)
             args.putString("usuario",usuario)
+            args.putString("idPeli",idPeli)
 
             val argsComentario = Bundle()
 
             argsComentario.putSerializable("comentarios",comentario)
             argsComentario.putString("usuario",usuario)
+            argsComentario.putString("idPeli",idPeli)
 
             val argsHorarios = Bundle()
             argsHorarios.putString("usuario",usuario)

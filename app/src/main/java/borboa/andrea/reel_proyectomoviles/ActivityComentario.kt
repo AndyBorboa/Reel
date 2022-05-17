@@ -1,31 +1,40 @@
 package borboa.andrea.reel_proyectomoviles
 
-import android.os.Build
+import android.content.Intent
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.widget.*
-import androidx.annotation.RequiresApi
-import androidx.appcompat.app.AppCompatActivity
-import com.google.firebase.database.FirebaseDatabase
-import java.time.LocalDateTime
-import java.time.format.DateTimeFormatter
+import android.widget.RatingBar
+import android.widget.TextView
+import android.widget.Toast
+import com.google.firebase.database.*
+import java.text.SimpleDateFormat
+import java.util.*
 
 class ActivityComentario : AppCompatActivity() {
-    private val userRef = FirebaseDatabase.getInstance().getReference("comentarios")
-    private val idPeli = FirebaseDatabase.getInstance().getReference("idPeli")
-    private val nombreUsuario= FirebaseDatabase.getInstance().getReference("usuarios")
+    private lateinit var comentariosRef: DatabaseReference
 
-    @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_comentario)
-        val usuario: String? = getIntent().getStringExtra("usuario")
 
-        var btnSave: Button =findViewById(R.id.btn_comentar) as Button
-        btnSave.setOnClickListener { saveComentariFrom() }
+        comentariosRef= FirebaseDatabase.getInstance().getReference("comentarios")
+
+        val bundle = intent.extras
+        var usuario = bundle?.getString("usuario")
+        var idPeli = bundle?.getString("idPeli")
+        var comentarios = bundle?.getSerializable("comentarios")
+
 
         val ratingBar = findViewById<View>(R.id.Rb_comentario) as RatingBar
+        val btn_comentar = findViewById<View>(R.id.btn_calificar)
         val msj = findViewById<TextView>(R.id.mensaje) as TextView
+
+        val btn_continuar = findViewById<View>(R.id.btn_continuar)
+
+        val sdf = SimpleDateFormat("dd/MM/yyyy")
+        val currentDate = sdf.format(Date()).toString()
+
         ratingBar.onRatingBarChangeListener =
             RatingBar.OnRatingBarChangeListener { ratingBar, v, b ->
                 Toast.makeText(this@ActivityComentario, "Stars: $v", Toast.LENGTH_SHORT).show()
@@ -41,28 +50,38 @@ class ActivityComentario : AppCompatActivity() {
                     msj.setText("¡Excelente!")
                 }
             }
-    }
-    @RequiresApi(Build.VERSION_CODES.O)
-    private fun saveComentariFrom() {
-        var comentario: EditText = findViewById(R.id.et_comentario) as EditText
-        var estrellas: RatingBar = findViewById(R.id.Rb_comentario) as RatingBar
 
-        val fecha=LocalDateTime.now()
-        val formatter =DateTimeFormatter.ofPattern("dd/MM/yyyy")
-        val formated = fecha.format(formatter)
+        btn_comentar.setOnClickListener {
+            val comentarioPelicula =findViewById(R.id.et_comentario) as TextView
+            val estrellasComentario = findViewById(R.id.Rb_comentario) as RatingBar
 
 
+            var comentarioTxt: String = comentarioPelicula.getText().toString()
+            var estrellasTxt:Float = estrellasComentario.rating
 
+            if(comentarioTxt.isEmpty() || estrellasTxt<1){
+                Toast.makeText(applicationContext,"Todos los datos son obligatorios!",
+                    Toast.LENGTH_SHORT).show()
+            }else {
+                val coment = comentario(usuario, currentDate, comentarioTxt, estrellasTxt, idPeli)
+                comentariosRef.push().setValue(coment)
 
-        val usuario = comentario(comentario.text.toString(),
-            estrellas.rating,
-            formated.toString(),
-            idPeli.key.toString(),
-            nombreUsuario.child("usuario").toString()
-        )
-        userRef.push().setValue(usuario)
-        Toast.makeText(applicationContext,"Comentario Agregado ",
-            Toast.LENGTH_SHORT).show()
-        return
+                Toast.makeText(
+                    applicationContext, "Comentario Agregado ",
+                    Toast.LENGTH_LONG).show()
+
+                var intent = Intent(applicationContext, CarteleraActivity::class.java)
+                intent.putExtra("usuario",usuario)
+                startActivity(intent)
+
+            }
+        }
+
+        btn_continuar.setOnClickListener{
+            var intent = Intent(applicationContext, CarteleraActivity::class.java)
+            intent.putExtra("usuario",usuario)
+            startActivity(intent)
+        }
+
     }
 }

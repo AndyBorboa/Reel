@@ -31,7 +31,7 @@ class ComentariosAdapter(val comentariosList: List<comentario>) :
     }
 
     override fun onBindViewHolder(holder: ComentariosViewHolder, position: Int) {
-        holder.usuarioView.setText(comentariosList[position].nombreUsuario)
+        holder.usuarioView.setText(comentariosList[position].usuario)
         holder.fechaView.setText(comentariosList[position].fecha)
         holder.comentarioView.setText(comentariosList[position].comentario)
         comentariosList[position].estrellas?.let { holder.estrellasView.setRating(it) }

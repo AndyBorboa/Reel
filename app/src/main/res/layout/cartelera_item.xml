@@ -70,7 +70,6 @@
 
             <RatingBar
                 android:id="@+id/ratingBar"
-                android:stepSize="1"
                 style="?android:attr/ratingBarStyleSmall"
                 android:theme="@style/RatingBar.Yellow"
                 android:layout_width="wrap_content"

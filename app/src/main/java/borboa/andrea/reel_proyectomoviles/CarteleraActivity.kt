@@ -1,6 +1,7 @@
 package borboa.andrea.reel_proyectomoviles
 
 import android.app.SearchManager
+import android.content.ClipData.Item
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
@@ -8,12 +9,10 @@ import android.view.*
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SearchView
-import borboa.andrea.reel_proyectomoviles.databinding.ActivityCarteleraBinding
 import com.bumptech.glide.Glide
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.database.*
 import java.util.*
-import kotlin.collections.ArrayList
 
 
 class CarteleraActivity : AppCompatActivity() {
@@ -43,6 +42,8 @@ class CarteleraActivity : AppCompatActivity() {
     private lateinit var bdref:DatabaseReference
     private lateinit var bdref1:DatabaseReference
 
+    lateinit var idPeli:String
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_cartelera)
@@ -54,7 +55,7 @@ class CarteleraActivity : AppCompatActivity() {
         bottomNavigationView.setOnNavigationItemSelectedListener(BottomNavigationView.OnNavigationItemSelectedListener { menuItem ->
             when (menuItem.itemId) {
                 R.id.inicio -> {
-                    var intent = Intent(applicationContext, CarteleraActivity::class.java)
+                    var intent = Intent(applicationContext, InicioActivity::class.java)
                     intent.putExtra("usuario",usuario)
                     startActivity(intent)
 
@@ -185,7 +186,7 @@ class CarteleraActivity : AppCompatActivity() {
                                             val comentario : String=comentariosSnapshot.child("comentario").getValue().toString()
                                             val estrellas:Float =(comentariosSnapshot.child("estrellas").getValue().toString()).toFloat()
                                             val idPeli:String= comentariosSnapshot.child("idPeli").getValue().toString()
-                                            val coment:comentario=(comentario(comentario, estrellas, fecha, idPeli, nombreUsuario))
+                                            val coment:comentario=(comentario(nombreUsuario,fecha,comentario,estrellas,idPeli))
                                             if(idPeli.equals("peli1")){
                                                 comentarios1.add(coment)
                                             }else if(idPeli.equals("peli2")){
@@ -220,6 +221,7 @@ class CarteleraActivity : AppCompatActivity() {
 
                     }
                     for (data in datosList) {
+
                         val imagen1: String = data.imagen.toString()
                         val titulo1: String = data.titulo.toString()
                         val categoria1: String = data.categoria.toString()
@@ -233,6 +235,9 @@ class CarteleraActivity : AppCompatActivity() {
 
                         if(titulo1.equals("Godzila vs Kong")){
                             displayPeliculas.add(peli(imagen1, titulo1, categoria1, subtitulo1, clasificacion1, duracion1, director1, reparto1, videoUrl1, sinopsis1, comentarios1))
+                            comentarios1.map {
+                                it.estrellas.toString().toDouble()
+                            }?.average().toString().toFloat()
                         }else if(titulo1.equals("Caos: El Inicio")){
                             displayPeliculas.add(peli(imagen1, titulo1, categoria1, subtitulo1, clasificacion1, duracion1, director1, reparto1, videoUrl1, sinopsis1, comentarios2))
                         }else if(titulo1.equals("El Protector")){
@@ -261,6 +266,7 @@ class CarteleraActivity : AppCompatActivity() {
                     peliculasAdapter = ItemAdapter(this@CarteleraActivity, displayList,user)
                     gridView_movies = findViewById(R.id.gridview)
                     gridView_movies.adapter = peliculasAdapter
+
 
                 }
             }
@@ -298,23 +304,51 @@ class CarteleraActivity : AppCompatActivity() {
             var inflator = contexto!!.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
             var vista = inflator.inflate(R.layout.cartelera_item, null)
             var user = usuario
+            var idPeli:String
+
+            var ratinMedia = pelicula.comentarios?.map {
+                it.estrellas.toString().toDouble()
+            }?.average().toString().toFloat()
 
             var image: ImageView = vista.findViewById(R.id.imagen_peliculacartelera) as ImageView
             var title: TextView = vista.findViewById(R.id.titulo_peliculacartelera) as TextView
             var categoria: TextView = vista.findViewById(R.id.categoria_peliculacartelera) as TextView
             var estrellas: RatingBar = vista.findViewById(R.id.ratingBar) as RatingBar
-            var ratinMedia = pelicula.comentarios?.map {
-                it.estrellas.toString().toDouble()
-            }?.average().toString().toFloat()
+
 
             Glide.with(contexto!!).load(pelicula.imagen).into(image);
             title.setText(pelicula.titulo)
             categoria.setText(pelicula.categoria)
             if (ratinMedia != null) {
                 estrellas.rating = ratinMedia
+
             }
 
-
+            if(pelicula.titulo.equals("Godzila vs Kong")==true){
+                idPeli="peli1"
+            }else if(pelicula.titulo.equals("Caos: El Inicio")==true){
+                idPeli="peli2"
+            }else if(pelicula.titulo.equals("El Protector")==true){
+                idPeli="peli3"
+            }else if(pelicula.titulo.equals("UUUPS! 2 La Aventura Continúa")==true){
+                idPeli="peli4"
+            }else if(pelicula.titulo.equals("El Día Del Fin Del Mundo")==true) {
+                idPeli="peli5"
+            }else if(pelicula.titulo.equals("El Tunel")==true) {
+                idPeli="peli6"
+            }else if(pelicula.titulo.equals("Tom y Jerry")==true) {
+                idPeli="peli7"
+            }else if(pelicula.titulo.equals("Pinochio")==true) {
+                idPeli="peli8"
+            }else if(pelicula.titulo.equals("Juega Conmigo")==true) {
+                idPeli="peli9"
+            }else if(pelicula.titulo.equals("Mujer Maravilla")==true) {
+                idPeli="peli10"
+            }else if(pelicula.titulo.equals("El Cazador De Monstruos")==true) {
+                idPeli="peli11"
+            }else{
+                idPeli="peli12"
+            }
 
             image.setOnClickListener {
                 var intent = Intent(contexto, PeliculasActivity::class.java)
@@ -333,13 +367,13 @@ class CarteleraActivity : AppCompatActivity() {
                 bundle.putSerializable("comentarios", pelicula.comentarios)
                 bundle.putFloat("promedio",ratinMedia)
                 bundle.putString("usuario",user)
+                bundle.putString("idPeli",idPeli)
 
                 intent.putExtras(bundle);
                 contexto!!.startActivity(intent)
             }
 
             return vista
-
         }
 
     }
