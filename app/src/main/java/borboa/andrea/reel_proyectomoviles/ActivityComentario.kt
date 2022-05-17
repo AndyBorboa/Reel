@@ -11,6 +11,7 @@ import com.google.firebase.database.*
 import java.text.SimpleDateFormat
 import java.util.*
 
+
 class ActivityComentario : AppCompatActivity() {
     private lateinit var comentariosRef: DatabaseReference
 
